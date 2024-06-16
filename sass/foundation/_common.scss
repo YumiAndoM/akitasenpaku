@@ -1,0 +1,811 @@
+@use "../global" as *;
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 10em;
+}
+
+.body {
+  overflow-x: hidden;
+}
+
+
+.contentsWrap {
+  // @include pcContents;
+  width: clamp(46.875rem, 36.458rem + 20.83vw, 62.5rem);
+  margin-left: auto;
+  margin-right: auto;
+
+  @include max(sp) {
+    width: clamp(20rem, 9.356rem + 50.09vw, 37.5rem);
+  }
+}
+
+.centerTitle {
+  @include centerTitle;
+}
+
+
+.pB3rem {
+  padding-bottom: 3rem;
+}
+
+.pT3rem {
+  padding-top: 3rem;
+}
+/* ----------------main----------------- */
+
+main {
+  width: 100%;
+  // background: url(../img/bg01.png), url(../img/bg02.png);
+  // background-position: top 100vh left 0, bottom 50vh right -20%; 
+  // background-size: 70%, 100%;
+  // z-index: -2;
+  // background-repeat: no-repeat;
+}
+
+.main__bg {
+  width: 100%;
+  background: url(../img/bg03.png), url(../img/bg04.png);
+  background-position: top 100vh left 0, bottom 50vh right 0%; 
+  background-size: 70%, 100%;
+  z-index: -3;
+  background-repeat: no-repeat;
+
+  @include max(sp) {
+    background-position: top 150vh left 0, bottom 100vh right 0; 
+    background-size: 150%, 200%;
+  }
+}
+
+
+/* ----------------title blue----------------- */
+.titleBlock {
+  width: auto;
+  padding-bottom: 2rem;
+  // padding-top: 3rem;
+  
+}
+
+.commonTitle-h2 {
+  font-size: clamp(3.5rem, 3.167rem + 0.67vw, 4rem);
+
+  @include max(sp) {
+    text-align: center;
+    font-size: clamp(2.375rem, 1.995rem + 1.79vw, 3rem);
+  }
+
+  span {
+  font-size: clamp(5.5rem, 5.167rem + 0.67vw, 6rem);
+  font-family: "Noto Serif JP", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  color: $cMain;
+
+  @include max(sp) {
+    font-size: clamp(3.125rem, 2.745rem + 1.79vw, 3.75rem);
+  }
+  }
+}
+
+.commonTitle-h3 {
+  font-size: clamp(1rem, 0.667rem + 0.67vw, 1.5rem);
+  text-align: center;
+  margin-top: 3%;
+  position: relative;
+  // color: $cWhite;
+
+  @include max(sp) {
+    text-align: center;
+    font-size: clamp(0.875rem, 0.799rem + 0.36vw, 1rem);
+  }
+}
+
+
+/* ----------------title white----------------- */
+.commonTitle-h2-textWhite {
+  color: $cWhite;
+  font-size: clamp(3.5rem, 3.167rem + 0.67vw, 4rem);
+
+  @include max(sp) {
+    font-size: clamp(2.375rem, 1.995rem + 1.79vw, 3rem);
+  }
+
+  span {
+  font-size: clamp(5.5rem, 5.167rem + 0.67vw, 6rem);
+  font-family: "Noto Serif JP", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  color: $cWhite;
+
+  @include max(sp) {
+    font-size: clamp(3.125rem, 2.745rem + 1.79vw, 3.75rem);
+    }
+  }
+}
+
+
+.commonTitle-h3-textWhite {
+  font-size: clamp(1rem, 0.667rem + 0.67vw, 1.5rem);
+  text-align: center;
+  margin-top: 3%;
+  position: relative;
+  color: $cWhite;
+
+  @include max(sp) {
+    font-size: clamp(0.875rem, 0.799rem + 0.36vw, 1rem);
+  }
+}
+
+
+/* ----------------button2----------------- */
+
+.commonButton2 {
+  // width: clamp(21.875rem, 19.792rem + 4.17vw, 25rem);
+  width: 80% !important;
+  height: clamp(4.375rem, 4.167rem + 0.42vw, 4.688rem);
+  background: rgb(0,159,230);
+  background: linear-gradient(90deg, rgba(0,159,230,1) 0%, rgba(52,255,243,1) 100%);
+  margin-top: 3rem;
+
+  @include max(sp) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &-rightBlock {
+    margin-left: auto;
+  }
+
+  a {
+    width: 100%;
+    height: clamp(4.375rem, 4.167rem + 0.42vw, 4.688rem);
+    display: block;
+    text-align: center;
+    line-height: clamp(4.375rem, 4.167rem + 0.42vw, 4.688rem);
+    color: $cWhite;
+    font-family: "Noto Serif JP", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: clamp(1.125rem, 1.042rem + 0.17vw, 1.25rem);
+    letter-spacing: 0.2rem;
+    position: relative;
+
+    &:hover {
+      color: $cMain;
+      transform: color 5s;
+    }
+
+    &::after {
+      content: ">";
+      position: absolute;
+      right: 2%;
+
+    }
+  }
+}
+
+
+
+
+
+.commonButton {
+  // width: clamp(21.875rem, 19.792rem + 4.17vw, 25rem);
+  width: 40% !important;
+  height: clamp(4.375rem, 4.167rem + 0.42vw, 4.688rem);
+  background: rgb(0,159,230);
+  background: linear-gradient(90deg, rgba(0,159,230,1) 0%, rgba(52,255,243,1) 100%);
+  margin-top: 3rem;
+
+  a {
+    width: 100%;
+    height: clamp(4.375rem, 4.167rem + 0.42vw, 4.688rem);
+    display: block;
+    text-align: center;
+    line-height: clamp(4.375rem, 4.167rem + 0.42vw, 4.688rem);
+    color: $cWhite;
+    font-family: "Noto Serif JP", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: clamp(1.125rem, 1.042rem + 0.17vw, 1.25rem);
+    letter-spacing: 0.2rem;
+    position: relative;
+
+    &:hover {
+      color: $cMain;
+      transition: color 1s;
+    }
+
+    &::after {
+      content: ">";
+      position: absolute;
+      right: 2%;
+
+    }
+  }
+}
+
+
+.centerButton {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+
+/*== ボタン共通設定 */
+.btn{
+    /*アニメーションの起点とするためrelativeを指定*/
+    position: relative;
+	overflow: hidden;
+    /*ボタンの形状*/
+	// text-decoration: none;
+	// display: inline-block;
+  //  	border: 1px solid #555;/* ボーダーの色と太さ */
+  //   padding: 10px 30px;
+  //   text-align: center;
+  //   outline: none;
+    /*アニメーションの指定*/   
+    transition: ease .2s;
+}
+
+/*ボタン内spanの形状*/
+.btn span {
+	position: relative;
+	z-index: 3;/*z-indexの数値をあげて文字を背景よりも手前に表示*/
+}
+
+.btn:hover span{
+	color:$cMain;
+}
+
+/*== 背景が流れる（斜め） */
+.bgskew::before {
+	content: '';
+    /*絶対配置で位置を指定*/
+	position: absolute;
+	top: 0;
+	left: -130%;
+    /*色や形状*/
+	background:$cWhite;
+	width:120%;
+	height: 120%;
+	transform: skewX(-25deg);
+  
+}
+
+/*hoverした時のアニメーション*/
+.bgskew:hover::before {
+	animation: skewanime .5s forwards;/*アニメーションの名前と速度を定義*/
+}
+
+@keyframes skewanime {
+	100% {
+		left:-10%;/*画面の見えていない左から右へ移動する終了地点*/
+	}
+}
+/* ----------------２P以降FV----------------- */
+
+.common__fv {
+  width: 100%;
+  height: 60vh;
+  // // background: url(../img/top_bg.png);
+  //   // width: 100%;
+  //   // height: 100%;
+  // //   background-repeat: no-repeat;
+  // //   background-size: 100%;
+  // position: relative;
+  // display: block;
+
+  &-bg {
+    width: 100%;
+    height: 60vh;
+    display: block;
+  //   // position: absolute;
+  //   // object-fit: cover;
+
+    img {
+      
+      width: 100%;
+      height: 100%;
+  //     // height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  
+  
+  &-titleBlock {
+    width: 100%;
+    height: 60%;
+    position: absolute;
+    top: 0;
+  //   // display: block;
+  //   // width: auto;
+  //   // left: 50%;
+  //   // transform: translate(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-h2 {
+    font-size: clamp(3.25rem, 2.917rem + 0.67vw, 3.75rem);
+  //   // text-align: center;
+    color: $cWhite;
+    line-height: 8rem;
+    position: relative;
+  //   // top: 40%;
+    display: inline-block;
+
+    @include max(sp) {
+      font-size: clamp(2.375rem, 1.995rem + 1.79vw, 3rem);
+    }
+
+    &::after {
+      content: "";
+      border-bottom: solid 2px $cWhite;
+      height: 2px;
+      width: 120%;
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &-h3 {
+    color: $cWhite;
+  //   // text-align: center;
+    font-size: clamp(2rem, 1.667rem + 0.67vw, 2.5rem);
+  //   // position: absolute;
+  //   // top: 60%;
+
+  @include max(sp) {
+    font-size: clamp(1.625rem, 1.245rem + 1.79vw, 2.25rem);
+  }
+  }
+}
+
+
+/* ----------------パンくず----------------- */
+.breadcrumb {
+  width: 100%;
+  height: 80px;
+  padding-left: 2%;
+  // margin: 2.5% auto 0;
+}
+
+.breadcrumb-wrapper__list {
+  display: flex;
+}
+
+.breadcrumb-wrapper__list__item {
+  font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
+  line-height: 80px;
+
+  @include max(sp) {
+    font-size: clamp(0.75rem, 0.674rem + 0.36vw, 0.875rem);
+  }
+
+}
+
+// .breadcrumb-item-newsTitle {
+//   @include max(sp) {
+//       text-overflow: ellipsis;
+//       overflow: hidden;
+//       white-space: nowrap;
+//       // width: 100%;
+//     }
+// }
+
+.breadcrumb-wrapper__list__item::after {
+  content: ">";
+  padding: 0 10px;
+  font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
+
+  @include max(sp) {
+    font-size: clamp(0.75rem, 0.674rem + 0.36vw, 0.875rem);
+  }
+}
+
+.breadcrumb-wrapper__list__item:last-child {
+  @include max(sp) {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 40%;
+    }
+}
+
+.breadcrumb-wrapper__list__item:last-child::after {
+  content: "";
+}
+
+/* ----------------section common__block　TOPのCOMPANYとBUSINESS----------------- */
+
+.common__block {
+  position: relative;
+  // margin-bottom: 3rem;
+
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  @include max(sp) {
+    position: static;
+  }
+
+  .rowReverse {
+      display: flex;
+    justify-content: space-between;
+    width: 100%;
+      flex-direction: row-reverse;
+
+      @include max(sp) {
+        flex-direction: column;
+      }
+    }
+
+  .flexwrap {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    @include max(sp) {
+      flex-direction: column;
+    }
+
+    
+    .flexbox {
+
+      &__subTitle {
+        margin-bottom: 2rem;
+        // padding-left: 4%;
+        p {
+          font-size: clamp(1.25rem, 1.083rem + 0.33vw, 1.5rem);
+          line-height: 2rem;
+          padding-left: 5%;
+          margin-left: 5%;
+          position: relative;
+          display: block;
+
+          &.beforeBorder {
+            &::before {
+              border-top: 3px solid $cMain;
+              width: 5%;
+              content: "";
+              top: 50%;
+              left: 0;
+              position: absolute;
+
+            }
+          }
+        }
+      }
+      
+      .imgBlock {
+        
+        width: 90%;
+        aspect-ratio: 1 / 1;
+        padding: 0 1%;
+
+        @include max(sp) {
+          width: 100%;
+          margin-bottom: 1rem;
+        }
+        
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .rightImg {
+        display: block;
+        margin-left: auto;
+      }
+    }
+  }
+
+  &-positionBlock {
+    position: absolute;
+    // background-color: aqua;
+    padding: 0 1%;
+    width: clamp(25rem, 20.833rem + 8.33vw, 31.25rem);
+    // background-color: aqua;
+    // bottom: -3rem;
+    top: clamp(15.625rem, 13.542rem + 4.17vw, 18.75rem);
+    
+
+    @include max(sp) {
+      position: static;
+      width: 100%;
+    }
+    &-right {
+      right: 0;
+
+      .common__block-textBlock {
+        display: block;
+        margin-left: auto;
+        width: clamp(18.125rem, 16.875rem + 2.5vw, 20rem);
+        // background-color: aqua;
+        // display: flex;
+        // flex-direction: column;
+        // align-items: flex-end;
+
+        @include max(sp) {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+
+  &-textBlock {
+
+    &-ul {
+      margin-bottom: 1rem;
+    }
+    &-li {
+      font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
+      line-height: 1.5rem;
+    }
+  }
+}
+
+
+
+
+/* ----------------section RECRUIT----------------- */
+
+// .recruit {
+//   width: 100%;
+// position: relative;
+// padding-bottom: 3rem;
+// padding-top: 5rem;
+
+// @include max(sp) {
+//   position: static;
+// }
+
+// &::after {
+//   content: "";
+//   width: 100%;
+//   height: 60%;
+//   position: absolute;
+//   bottom: 0;
+//   background: rgb(2,109,157);
+//   background: linear-gradient(90deg, rgba(2,109,157,1) 0%, rgba(8,172,162,1) 100%);
+//   z-index: -1;
+//   }
+
+//   .fontWhite {
+//     color: $cWhite !important;
+//   }
+// }
+
+
+
+.common__recruit {
+  width: 100%;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  // background-color: $cDarkBlue;
+  // background-size: 100% 50%;
+  position: relative;
+  // z-index: -1;
+
+  // &::before {
+  //   background-color: $cWhiteOpa;
+  //   position: absolute;
+  //   content: "";
+  //   width: 100%;
+  //   bottom: 0;
+  //   height: 100%;
+  //   z-index: -1;
+  // }
+
+  &::after {
+    background-color: $cDarkBlue;
+    position: absolute;
+    content: "";
+    width: 100%;
+    bottom: 0;
+    height: 65%;
+    z-index: -1;
+  }
+
+  &-block {
+    width: 100%;
+    position: relative;
+
+    &-positionBlock {
+      position: absolute;
+      width: clamp(22.5rem, 18.75rem + 7.5vw, 28.125rem);
+      top: clamp(9.375rem, 7.292rem + 4.17vw, 12.5rem);
+
+      @include max(sp) {
+        position: static;
+        width: 100%;
+      }
+    }
+
+    &-textBlock {
+      
+      &-subTitle {
+        p {
+          color: $cWhite;
+          font-size: clamp(1.25rem, 1.083rem + 0.33vw, 1.5rem);
+          line-height: 2rem;
+          margin-bottom: 2rem;
+        }
+      }
+
+      &-p {
+          color: $cWhite;
+          font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
+          line-height: 1.5rem;
+        }
+    }
+  }
+
+  &-flexWrap {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    @include max(sp) {
+      flex-direction: column;
+    }
+  }
+
+  &-flexBox {
+
+    &-imgBlock {
+      width: 90%;
+      aspect-ratio: 1 / 1;
+      margin-left: auto;
+
+      @include max(sp) {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+
+      }
+    }
+  }
+
+
+
+}
+
+
+
+/* ----------------CONTACT----------------- */
+
+.common__contact {
+  width: 100%;
+  background: $cDarkBlue;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  // padding-bottom: 4rem;
+  // margin-top: 3rem;
+
+  // .contentsWrap {
+  //   .titleBlock {
+  //     padding-bottom: 2rem;
+  //   }
+  // }
+}
+
+.contact-title {
+  text-align: center;
+}
+
+
+.contactWrap-ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include max(sp) {
+    flex-direction: column;
+  }
+
+  &-item {
+    width: 49%;
+    height: 130px;
+    text-align: center;
+    font-weight: bold;
+    font-size: clamp(1.375rem, 1.292rem + 0.17vw, 1.5rem);
+
+    @include max(sp) {
+      width: 100%;
+    }
+    
+
+    span {
+      font-size: clamp(2.5rem, 2.292rem + 0.42vw, 2.813rem);
+      font-family: "Noto Serif JP", serif;
+      font-optical-sizing: auto;
+      font-weight: 600;
+      font-style: normal;
+    }
+  }
+}
+
+
+.contact-webBlock {
+
+  
+  a {
+    width: 100%;
+    height: 130px;
+    line-height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid $cWhite;
+    color: $cWhite;
+    position: relative;
+
+    span {
+      // padding-bottom: 4%;
+      padding-bottom: clamp(0.938rem, 0.813rem + 0.25vw, 1.125rem);
+    }
+
+    img {
+      width: 50px;
+      height: 50px;
+      padding-left: 1%;
+    }
+
+    // &::after {
+    //   content: "";
+    //   background: url(../img/contact-arrow.png);
+    //   position: absolute;
+    //   right: 5%;
+    //   top: 50%;
+    //   transform: translateY(-50%);
+    //   z-index: 1;
+    //   width: 50px;
+    //   height: 50px;
+    // }
+
+
+    span {
+      color: $cWhite;
+    }
+  }
+}
+
+.contact-telBlock {
+  background: $cWhite;
+  line-height: 2.5rem;
+  padding: 30px 0;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // flex-wrap: wrap;
+  // flex-direction: column;
+
+  color: #026D9D;
+
+  span {
+    color: #026D9D;
+  }
+}

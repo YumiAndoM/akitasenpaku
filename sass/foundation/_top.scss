@@ -1,0 +1,555 @@
+@use "../global" as *;
+
+/* ---------------------------------
+top
+--------------------------------- */
+
+
+
+
+
+/* ----------------section FV----------------- */
+
+#vegas-slider {
+    width: 100%;
+    height: 100vh;/*スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
+
+    .catchCopy {
+      position: relative;
+      // bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: clamp(4.5rem, 4.167rem + 0.67vw, 5rem);
+      color: $cWhite;
+      text-align: center;
+      // margin-top: 60vh;
+      // margin-top: clamp(37.5rem, 33.333rem + 8.33vw, 43.75rem);
+      margin-top: clamp(9.375rem, 7.292rem + 4.17vw, 12.5rem);
+      
+
+      @include max(pc) {
+        br {
+          display: none;
+        }
+      }
+
+      @include max(sp) {
+        font-size: clamp(2.5rem, 1.74rem + 3.58vw, 3.75rem);
+        line-height: 4rem;
+      }
+      
+      span {
+        font-size: clamp(3.5rem, 3.167rem + 0.67vw, 4rem);
+        font-family: "Noto Serif JP", serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        font-style: normal;
+        color: $cWhite;
+
+        @include max(sp) {
+          font-size: clamp(1.875rem, 1.305rem + 2.68vw, 2.813rem);
+        }
+      }
+    }
+}
+
+
+
+/*=== 9-1-2 丸が動いてスクロールを促す ====*/
+
+/*スクロールダウン全体の場所*/
+.scrolldown2{
+    /*描画位置※位置は適宜調整してください*/
+	position:absolute;
+	bottom:10px;
+	left:50%;
+}
+
+/*Scrollテキストの描写*/
+.scrolldown2 span{
+    /*描画位置*/
+	position: absolute;
+	left:10px;
+	bottom:10px;
+    /*テキストの形状*/
+	color: $cBlack;
+	font-size: 0.7rem;
+	letter-spacing: 0.05em;
+	/*縦書き設定*/
+	-ms-writing-mode: tb-rl;
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+}
+
+/* 丸の描写 */
+.scrolldown2:before {
+    content: "";
+    /*描画位置*/
+    position: absolute;
+    bottom:0;
+    left:-4px;
+    /*丸の形状*/
+	width:10px;
+	height:10px;
+	border-radius: 50%;
+	background:$cBlack;
+    /*丸の動き1.6秒かけて透過し、永遠にループ*/
+	animation:
+		circlemove 1.6s ease-in-out infinite,
+		cirlemovehide 1.6s ease-out infinite;
+}
+
+/*下からの距離が変化して丸の全体が上から下に動く*/
+@keyframes circlemove{
+      0%{bottom:45px;}
+    100%{bottom:-5px;}
+}
+
+/*上から下にかけて丸が透過→不透明→透過する*/
+@keyframes cirlemovehide{
+      0%{opacity:0}
+    50%{opacity:1;}
+    80%{opacity:0.9;}
+	100%{opacity:0;}
+}
+
+/* 線の描写 */
+.scrolldown2:after{
+	content:"";
+    /*描画位置*/
+	position: absolute;
+	bottom:0;
+	left:0;
+    /*線の形状*/
+	width:2px;
+	height: 50px;
+	background: $cBlack;
+}
+
+
+
+
+/* ----------------section NEWS----------------- */
+
+
+.top__news {
+
+  height: auto;
+  background: $cWhite;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.newsBlock {
+  display: flex;
+
+  @include max(sp) {
+    flex-direction: column;
+  }
+}
+
+.top__news-titleBlock {
+  width: 30%;
+
+  @include max(sp) {
+    width: 100%;
+  }
+}
+
+.top__news-title {
+  font-size: clamp(3rem, 2.333rem + 1.33vw, 4rem);
+  color: $cMain;
+  text-align: center;
+}
+
+.top__news-subTitle {
+  font-size: clamp(1rem, 0.667rem + 0.67vw, 1.5rem);
+  text-align: center;
+  margin-top: 5%;
+  position: relative;
+}
+
+.top__news-contentsBlock {
+width: 70%;
+
+@include max(sp) {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+  &-li {
+    font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
+    line-height: 30px;
+    margin-left: 5%;
+
+    @include max(sp) {
+      font-size: clamp(0.75rem, 0.674rem + 0.36vw, 0.875rem);
+    }
+
+    .date {
+      margin-right: 10%;
+    }
+  }
+}
+
+.to__newsPage {
+  display: block;
+  width: 30%;
+  margin-left: 80%;
+  // background-color: aqua;
+  text-align: right;
+
+  @include max(sp) {
+    margin-left: auto;
+    font-size: clamp(0.75rem, 0.674rem + 0.36vw, 0.875rem);
+    margin-top: 1rem;
+  }
+
+
+  a {
+    color: $cMain;
+    position: relative;
+    width: 100%;
+  }
+}
+
+
+
+/* ----------------section MOVIE----------------- */
+
+.movie {
+  width: 100%;
+  height: 100%;
+  // aspect-ratio: 16 / 9;
+  background: rgb(0,159,230,0.5);
+  background: linear-gradient(0deg, rgba(0,159,230,0.5) 0%, rgba(255,255,255,0) 82%);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+
+  iframe {
+    width: 80%;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+    @include max(sp) {
+      width: 100%;
+    }
+  }
+}
+
+.subete_video{
+  object-fit: cover;
+}
+
+
+
+.top__movie-title {
+  font-size: clamp(3rem, 2.333rem + 1.33vw, 4rem);
+  text-align: center;
+  @include underTitle;
+
+  @include max(pc) {
+    br {
+      display: none;
+    }
+  }
+
+      @include max(sp) {
+        font-size: clamp(1.875rem, 0.925rem + 4.47vw, 3.438rem);
+        line-height: 3rem;
+      }
+
+  span {
+    font-size: 2.5rem;
+
+    @include max(sp) {
+          font-size: clamp(1.563rem, 0.992rem + 2.68vw, 2.5rem);
+        }
+  }
+}
+// .movieBlock {
+//   display: block;
+//   margin-left: auto;
+//   margin-right: auto;
+//   width: 800px;
+// }
+
+
+/* ----------------section COMPANY----------------- */
+
+.common__company {
+  width: 100%;
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+}
+
+
+
+/* ----------------section strong----------------- */
+
+.strong {
+  width: 100%;
+  background: url(../img/strong.png);
+  z-index: -1;
+  background-size: 100%;
+  // background: rgb(2,109,157);
+  // background: linear-gradient(45deg, rgba(2,109,157,0.5) 0%, rgba(8,172,162,0.5) 82%); 
+  height: 100%;
+
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+.top__strong-title {
+  font-size: clamp(3rem, 2.333rem + 1.33vw, 4rem);
+  text-align: center;
+  color: $cWhite;
+  @include underTitle;
+
+  @include max(pc) {
+    br {
+      display: none;
+    }
+  }
+
+
+  @include max(sp) {
+        font-size: clamp(1.875rem, 0.925rem + 4.47vw, 3.438rem);
+        line-height: 3rem;
+      }
+  span {
+    font-size: 2.5rem;
+    color: $cWhite;
+    font-family: "Noto Serif JP", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+
+    @include max(sp) {
+          font-size: clamp(1.563rem, 0.992rem + 2.68vw, 2.5rem);
+        }
+  }
+}
+
+// .carousel {
+//   display: flex;
+//   justify-content: space-between;
+  
+
+  
+//   .slide {
+//     width: 33%;
+//     background: $cWhite;
+//     display: block;
+//     padding: 2%;
+//     border: 1px solid $cBlack;
+
+//     img {
+//       // width: 50%;
+//       width: clamp(7.5rem, 6.25rem + 2.5vw, 9.375rem);
+//       display: block;
+//       margin-left: auto;
+//       margin-right: auto;
+//     }
+//   }
+// }
+
+.strong {
+.slider {
+  .slick-slider-li {
+    background: $cWhite;
+    padding: 2%;
+
+    @include max(sp) {
+      padding: 1%;
+    }
+
+    img {
+      width: 50%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.carousel-slide-title {
+  font-size: clamp(1.25rem, 1.083rem + 0.33vw, 1.5rem);
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.carousel-slide-text {
+  font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
+  line-height: 1.8rem;
+}
+}
+
+/* ----------------section business----------------- */
+
+.business {
+  width: 100%;
+  height: 100%;
+  // background: $cWhiteOpa;
+  padding-top: 3rem;
+}
+
+
+.business-01Block {
+  width: 100%;
+  height: clamp(25rem, 20.833rem + 8.33vw, 31.25rem);
+  position: relative;
+  // background-color: aqua;
+  // display: block;
+
+  .upBlock {
+    position: absolute;
+    right: 0;
+  }
+  
+  .underBlock {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .rightBlock {
+    height: 50%;
+    width: 100%;
+    right: 0;
+    
+    
+  }
+
+  .leftBlock {
+    width: 100%;
+    height: clamp(25rem, 20.833rem + 8.33vw, 31.25rem);
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    display: block;
+    
+    
+
+    
+    img {
+      width: 100%;
+      height: 100%;
+      // height: clamp(25rem, 20.833rem + 8.33vw, 31.25rem);
+      
+      
+    
+    }
+  }
+
+  .imgBlock {
+      width: 50%;
+      aspect-ratio: 5 / 5 !important;
+      object-fit: cover;
+  }
+}
+
+
+.subTitleBlock {
+
+  // margin-top: 3rem;
+  // margin-bottom: 2rem;
+  p {
+    font-size: clamp(1.375rem, 1.167rem + 0.42vw, 1.688rem);
+    line-height: 2.5rem;
+    padding-left: 5%;
+    position: relative;
+  }
+}
+
+.subTitle-p {
+  &-01 {
+    &::before {
+      content: "";
+      width: 4%;
+      border: solid 2px $cMain;
+      position: absolute;
+      top: 50%;
+      left: 0;
+    }
+  }
+}
+
+
+
+.textBlock {
+
+  &-ul {
+    margin-bottom: 1rem;
+  }
+  &-li {
+    list-style-type: disc;
+    font-size: clamp(0.875rem, 0.708rem + 0.33vw, 1.125rem);
+    line-height: 2rem;
+    margin-left: 3%;
+  }
+
+  &-p {
+    font-size: clamp(0.875rem, 0.708rem + 0.33vw, 1.125rem);
+    line-height: 2rem;
+  }
+}
+
+
+
+.business-02Block {
+  width: 100%;
+  
+
+  &-imgBlock {
+    width: 100%;
+    &-01 {
+      width: 100%;
+      height: 300px;
+      background: url(../img/contents01.jpg);
+      background-size: 100%;
+      background-position: center;
+    }
+
+    &-02 {
+      width: 100%;
+      height: 300px;
+      background: url(../img/contents02.jpeg);
+      background-size: 100%;
+      background-position: center;
+      margin-top: 3rem;
+    }
+  }
+
+  &-textBlock {
+    background: $cWhite;
+    display: block;
+    width: 20%;
+    text-align: center;
+    font-size: clamp(1.375rem, 1.042rem + 0.67vw, 1.875rem);
+    padding-top: 2%;
+    padding-bottom: 2%;
+    
+  }
+}
+
+.business-02Block {
+  &-right-text {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  &-left-text {
+    display: flex;
+    align-items: flex-end;
+  }
+}
+
+
+

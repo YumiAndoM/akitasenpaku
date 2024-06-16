@@ -1,0 +1,103 @@
+@use "../global" as *;
+
+/* ---------------------------------
+NEWS (details)
+--------------------------------- */
+
+.news__news {
+
+  padding-top: 2rem;
+  // padding-bottom: 3rem;
+  &-date {
+    &-p {
+      font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
+      margin-bottom: 2rem;
+    }
+  }
+
+  &-subTitle {
+    color: $cMain;
+    font-size: clamp(1.5rem, 1.25rem + 0.5vw, 1.875rem);
+    // font-size: clamp(2.5rem, 2.083rem + 0.83vw, 3.125rem);
+    font-family: "Noto Sans JP", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 2rem;
+
+    @include max(sp) {
+
+    }
+  }
+
+  &-imgBlock {
+    width: 100%;
+    aspect-ratio: 19 / 10;
+    margin-bottom: 2rem;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 50%;
+    }
+  }
+
+  &-textBlock {
+    width: 100%;
+    &-p {
+      line-height: 1.5rem;
+      font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
+      margin-bottom: 1rem;
+      letter-spacing: 0.1rem;
+    }
+  }
+}
+
+
+/* ----------------NEWS LINK----------------- */
+
+.news__linkBlock {
+  margin-top: 3rem;
+  padding-bottom: 3rem;
+  &-box {
+    &-ul {
+    display: flex;
+    justify-content: center;
+
+    @include max(sp) {
+      justify-content: space-between;
+    }
+    }
+
+    &-li {
+      text-align: center;
+      line-height: 2.5rem;
+
+      @include max(sp) {
+        font-size: clamp(0.75rem, 0.674rem + 0.36vw, 0.875rem);
+      }
+
+      a {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.toNewsList {
+  width: 20%;
+  margin-left: 2%;
+  margin-right: 2%;
+  background: rgb(0,159,230);
+  background: linear-gradient(90deg, rgba(0,159,230,1) 0%, rgba(52,255,243,1) 100%);
+
+  @include max(sp) {
+    width: 30%;
+  }
+  
+  a {
+    color: $cWhite;
+  }
+}

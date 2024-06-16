@@ -1,0 +1,152 @@
+@use "../global" as *;
+
+
+.contact__contact {
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.Form-Item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid $cBlackOpa;
+  padding-top: 2%;
+  padding-bottom: 2%;
+
+  @include max(sp) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__leftBox {
+    width: 30%;
+    padding-left: 5%;
+
+    @include max(sp) {
+      width: 100%;
+    }
+  }
+
+  &__rightBox {
+    width: 70%;
+    padding-left: 10%;
+    padding-right: 5%;
+
+    @include max(sp) {
+      width: 100%;
+    }
+  }
+
+  &-Label {
+    font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 1.5rem;
+
+    @include max(sp) {
+
+      margin-top: 1rem;
+      width: 90%;
+      justify-content: center;
+      justify-content: flex-start;
+
+
+      br {
+        display: none;
+      }
+    }
+
+
+    &-Required,
+    &-Arbitrary {
+    font-size: clamp(0.688rem, 0.646rem + 0.08vw, 0.75rem);
+    padding: 1% 5%;
+    display: block;
+    width: auto;
+    color: $cWhite;
+    letter-spacing: 0.1;
+
+    @include max(sp) {
+      padding: 1% 2%;
+      margin-left: 1rem;
+    }
+    }
+
+  &-Required {
+    background-color: #CF1C1C;
+    }
+
+  &-Arbitrary {
+    background-color: #999999;
+    }
+  }
+
+
+  .wpcf7-form-control {
+    width: 100%;
+    line-height: 2rem;
+
+    @include max(sp) {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .wpcf7-radio {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: clamp(0.688rem, 0.646rem + 0.08vw, 0.75rem);
+    line-height: 1.5rem;
+  }
+}
+
+
+
+.button-wrap {
+
+
+  
+.wpcf7-form-control {
+  // width: clamp(21.875rem, 19.792rem + 4.17vw, 25rem);
+  width: 40% !important;
+  height: clamp(4.375rem, 4.167rem + 0.42vw, 4.688rem);
+  background: rgb(0,159,230);
+  background: linear-gradient(90deg, rgba(0,159,230,1) 0%, rgba(52,255,243,1) 100%);
+  margin-top: 3rem;
+  border: none;
+  font-size: clamp(1.125rem, 1.042rem + 0.17vw, 1.25rem);
+  color: $cWhite;
+  letter-spacing: 0.2rem;
+  position: relative;
+  font-family: "Noto Serif JP", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include max(sp) {
+      width: 80% !important;
+    }
+
+  &::after {
+      content: ">";
+      position: absolute;
+      right: 2%;
+      color: $cWhite;
+  }
+
+  .wpcf7-submit {
+    width: 100%;
+    height: clamp(4.375rem, 4.167rem + 0.42vw, 4.688rem);
+    display: block;
+    text-align: center;
+    line-height: clamp(4.375rem, 4.167rem + 0.42vw, 4.688rem);
+    border: none;
+  }
+}
+
+}

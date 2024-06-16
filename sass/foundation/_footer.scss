@@ -1,0 +1,149 @@
+@use "../global" as *;
+
+/* ---------------------------------
+footer
+--------------------------------- */
+
+.footer {
+  width: 100%;
+  background: #393939;
+  border-top: 3px solid $cWhite;
+
+  // position: relative;
+
+  &-arrow {
+    // position: absolute;
+    position: fixed;
+    right: 1rem;
+    bottom: 5rem;
+
+    img {
+      @include max(sp) {
+      width: clamp(3.125rem, 2.745rem + 1.79vw, 3.75rem);
+      height: clamp(3.125rem, 2.745rem + 1.79vw, 3.75rem);
+      }
+    }
+
+  }
+}
+
+.footerWrap {
+  display: flex;
+  justify-content: center;
+
+  @include max(sp) {
+    flex-direction: column;
+  }
+}
+
+.footer-companyBlock {
+  width: 50%;
+  border-right: 3px solid $cWhite;
+  padding-top: 3%;
+  padding-bottom: 3%;
+
+  @include max(sp) {
+    width: 100%;
+    border-right: none;
+    padding: 1rem 0;
+  }
+
+  .officeName {
+    img {
+      width: 80%;
+      margin-bottom: 2rem;
+      
+    }
+  }
+
+  .address {
+    color: $cWhite;
+    margin-bottom: 1rem;
+    line-height: 1.5rem;
+    font-size: clamp(1rem, 0.917rem + 0.17vw, 1.125rem);
+    letter-spacing: 0.1rem;
+  }
+
+  .info {
+    &-item {
+      color: $cWhite;
+      line-height: 2rem;
+      padding-left: 2%;
+      position: relative;
+      font-size: clamp(1rem, 0.917rem + 0.17vw, 1.125rem);
+      letter-spacing: 0.1rem;
+
+      &::before {
+        content: "";
+        position: absolute;
+        border-left: solid 2px $cWhite;
+        height: clamp(1rem, 0.917rem + 0.17vw, 1.125rem);;
+        left: 0;
+        top: 20%;
+
+        
+      }
+    }
+  }
+}
+
+
+.footer-menuBlock {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 7%;
+  padding-top: 5%;
+  padding-bottom: 3%;
+
+  @include max(sp) {
+    width: 100%;
+    border-top: solid 2px $cWhite;
+    padding: 1rem 0;
+  }
+}
+
+.footer-menu-li {
+  font-size: clamp(0.875rem, 0.708rem + 0.33vw, 1.125rem);
+  line-height: 1.5rem;
+  color: $cWhite;
+
+  @include max(sp) {
+    font-size: clamp(0.75rem, 0.674rem + 0.36vw, 0.875rem);
+    margin-left: 1rem;
+    line-height: 1.3rem;
+  }
+  
+
+  a {
+    color: $cWhite;
+    letter-spacing: 0.1rem;
+    display: block;
+    width: 100%;
+  }
+
+  &__main {
+    line-height: 2.5rem;
+    list-style-type: disc;
+
+    @include max(sp) {
+      line-height: 2rem;
+    }
+    
+  }
+}
+
+/* ----------------コピーライト----------------- */
+
+.footer-copyRight {
+  width: 100%;
+  height: 50px;
+  background: $cWhite;
+
+  &-p {
+    font-size: clamp(0.75rem, 0.667rem + 0.17vw, 0.875rem);
+    line-height: 50px;
+    text-align: center;
+  }
+}
+

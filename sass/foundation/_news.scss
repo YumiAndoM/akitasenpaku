@@ -1,0 +1,171 @@
+@use "../global" as *;
+/* ---------------------------------
+NEWS-LIST
+--------------------------------- */
+
+
+
+.news__newsList-block-box {
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  display: flex;
+
+  @include max(sp) {
+    flex-direction: column;
+  }
+
+  &-imgBox {
+    width: 40%;
+
+    @include max(sp) {
+      width: 100%;
+    }
+    
+    
+
+    img {
+      width: 100%;
+      aspect-ratio: 9 / 6;
+      object-fit: cover;
+      object-position: 50% 50%;
+    }
+  }
+
+  &-textBox {
+    width: 60%;
+    padding: 2%;
+
+    @include max(sp) {
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    &-date {
+      font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
+      margin-bottom: 1rem;
+    }
+
+    &-subtitle {
+      font-size: clamp(1.25rem, 1.083rem + 0.33vw, 1.5rem);
+      font-family: "Noto Sans JP", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+      color: $cMain;
+      margin-bottom: 1rem;
+
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+
+      @include max(sp) {
+        line-height: 1.5rem;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+    }
+
+    &-textBlock {
+      line-height: 1.5rem;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+
+      @include max(sp) {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+      }
+    }
+
+    .newsButton {
+  // width: clamp(21.875rem, 19.792rem + 4.17vw, 25rem);
+  width: 40% !important;
+  height: clamp(2.5rem, 2.083rem + 0.83vw, 3.125rem);
+  background: rgb(0,159,230);
+  background: linear-gradient(90deg, rgba(0,159,230,1) 0%, rgba(52,255,243,1) 100%);
+  margin-top: 3rem;
+  margin-left: auto;
+
+  a {
+    width: 100%;
+    height: clamp(2.5rem, 2.083rem + 0.83vw, 3.125rem);
+    display: block;
+    text-align: center;
+    line-height: clamp(2.5rem, 2.083rem + 0.83vw, 3.125rem);
+    color: $cWhite;
+    font-family: "Noto Serif JP", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
+    letter-spacing: 0.2rem;
+    position: relative;
+
+    &:hover {
+      color: $cMain;
+    }
+
+    &::after {
+      content: ">";
+      position: absolute;
+      right: 2%;
+
+    }
+  }
+}
+  }
+}
+
+
+
+/* ----------------NEWS-LIST ページネーション----------------- */
+
+.pageNationBlock {
+
+  padding-bottom: 3rem;
+  &-number {
+
+  display: block;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include max(sp) {
+    width: 80%;
+  }
+
+  &-ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+    &-li {
+      width: 40px;
+      height: 40px;
+      display: block;
+      background-color: #999;
+      line-height: 40px;
+      text-align: center;
+    }
+
+    
+  }
+
+  .pageNation-active {
+      background-color: $cMain !important;
+
+      a {
+        color: $cWhite !important;
+      }
+      
+    }
+  
+}

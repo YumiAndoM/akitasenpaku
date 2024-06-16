@@ -1,0 +1,254 @@
+@use "../global" as *;
+
+/* ---------------------------------
+COMPANY 会社案内
+--------------------------------- */
+
+
+/* ----------------COMPANY MESSAGE（社長挨拶）----------------- */
+.company__message {
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  // background: $cWhiteOpa;
+  
+}
+
+.company__messageBlock {
+  width: 100%;
+  position: relative;
+
+  @include max(sp) {
+    position: static;
+  }
+
+  &-positionBlock {
+    width: clamp(31.25rem, 27.083rem + 8.33vw, 37.5rem);
+    position: absolute;
+    // top: clamp(9.375rem, 7.292rem + 4.17vw, 12.5rem);
+    bottom: 0;
+
+    @include max(sp) {
+      position: static;
+      width: 100%;
+      
+    }
+
+    &-textBlock {
+      padding: 3%;
+      background-color: $cWhite;
+
+      &-p {
+        font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
+        line-height: 1.5rem;
+
+        @include max(sp) {
+          font-size: clamp(0.75rem, 0.674rem + 0.36vw, 0.875rem);
+          line-height: 1.2rem;
+        }
+
+        &-ornerName {
+          font-size: clamp(1.125rem, 0.958rem + 0.33vw, 1.375rem);
+          margin-top: 1rem;
+          text-align: right;
+          font-family: "Noto Serif JP", serif;
+          font-optical-sizing: auto;
+          font-weight: 600;
+          font-style: normal;
+        }
+      }
+    }
+  }
+
+}
+
+
+/* ----------------COMPANY PHILOSOPHY（経営理念）----------------- */
+.company__philosophy {
+  background: rgb(2,109,157);
+  background: linear-gradient(90deg, rgba(2,109,157,1) 0%, rgba(8,172,162,1) 100%);
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+
+  .company__philosophy {
+    &-textBlock {
+      width: 100%;
+
+      &-subTitle {
+      text-align: center;
+      font-size: clamp(1.5rem, 1.167rem + 0.67vw, 2rem);
+      color: $cWhite;
+      // margin-top: 2rem;
+      margin-bottom: 5%;
+
+      @include max(pc) {
+        br {
+          display: none;
+        }
+      }
+
+      @include max(sp) {
+        font-size: clamp(1.125rem, 0.897rem + 1.07vw, 1.5rem);
+        line-height: 1.8rem;
+      }
+      }
+
+    &-p {
+      font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
+      text-align: center;
+      color: $cWhite;
+      line-height: 1.5rem;
+
+      @include max(sp) {
+        font-size: clamp(0.75rem, 0.674rem + 0.36vw, 0.875rem);
+        line-height: 1.2rem;
+      }
+      }
+    }
+
+    
+  }
+}
+
+
+/* ----------------COMPANY POLICY（経営方針）----------------- */
+
+.company__policy {
+
+  width: 100%;
+  // background: $cWhiteOpa;
+
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+
+  &-imgBlock {
+    width: 100%;
+    // margin-top: 2rem;
+    height: clamp(12.5rem, 8.333rem + 8.33vw, 18.75rem);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-textBlock {
+    margin-top: 2rem;
+
+    &-subTitle {
+      font-size: clamp(1.5rem, 1.167rem + 0.67vw, 2rem);
+      font-weight: bold;
+      margin-bottom: 2rem;
+      position: relative;
+      padding-left: 5%;
+
+      @include max(pc) {
+        br {
+          display: none;
+        }
+      }
+
+      @include max(sp) {
+        font-size: clamp(1.125rem, 0.897rem + 1.07vw, 1.5rem);
+        line-height: 1.8rem;
+      }
+
+      &::before {
+        content: "";
+        width: 4%;
+        border: solid 2px $cMain;
+        position: absolute;
+        top: 50%;
+        left: 0;
+
+        @include max(sp) {
+          top: 25%;
+        }
+      }
+    }
+
+    &-p {
+      line-height: 1.5rem;
+
+      @include max(sp) {
+          font-size: clamp(0.75rem, 0.674rem + 0.36vw, 0.875rem);
+          line-height: 1.2rem;
+        }
+    }
+  }
+}
+
+
+
+/* ----------------COMPANY COMPANY（会社概要）----------------- */
+
+.company__company {
+  width: 100%;
+  // background: $cWhiteOpa;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+
+  &-imgBlock {
+    width: 100%;
+    // margin-top: 2rem;
+    height: clamp(12.5rem, 8.333rem + 8.33vw, 18.75rem);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-listContents {
+    margin-top: 2rem;
+    dl {
+      font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 100%;
+      border-bottom: 1px solid $cBlackOpa;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+
+      @include max(sp) {
+        font-size: clamp(0.75rem, 0.674rem + 0.36vw, 0.875rem);
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+    }
+    dt {
+      width: 30%;
+      display: block;
+      padding-left: 2%;
+    }
+    dd {
+      width: 70%;
+      display: block;
+      line-height: 1.5rem;
+    }
+  }
+}
+
+/* ----------------COMPANY MAP----------------- */
+.company__map {
+  width: 100%;
+  background: $cWhiteOpa;
+
+  &-wrapper__map {
+    width: 100%;
+    height: 350px;
+
+    &__block {
+      width: 100%;
+      height: 100%;
+
+      iframe {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

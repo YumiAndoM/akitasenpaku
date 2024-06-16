@@ -1,0 +1,12 @@
+@use "../global" as *;
+
+
+.recruit__req {
+  margin-top: 2rem;
+  padding-bottom: 3rem;
+}
+.recruit__enterButton {
+  @include max(sp) {
+    width: 80% !important;
+  }
+}
