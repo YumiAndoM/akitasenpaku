@@ -154,7 +154,8 @@ main {
 
 .commonButton2 {
   // width: clamp(21.875rem, 19.792rem + 4.17vw, 25rem);
-  width: 80% !important;
+  // width: 80% !important;
+  width: 380px !important;
   height: clamp(4.375rem, 4.167rem + 0.42vw, 4.688rem);
   background: rgb(0,159,230);
   background: linear-gradient(90deg, rgba(0,159,230,1) 0%, rgba(52,255,243,1) 100%);
@@ -163,6 +164,7 @@ main {
   @include max(sp) {
     margin-left: auto;
     margin-right: auto;
+    width: 290px !important;
   }
 
   &-rightBlock {
@@ -204,11 +206,16 @@ main {
 
 .commonButton {
   // width: clamp(21.875rem, 19.792rem + 4.17vw, 25rem);
-  width: 40% !important;
+  // width: 40% !important;
+  width: 380px;
   height: clamp(4.375rem, 4.167rem + 0.42vw, 4.688rem);
   background: rgb(0,159,230);
   background: linear-gradient(90deg, rgba(0,159,230,1) 0%, rgba(52,255,243,1) 100%);
   margin-top: 3rem;
+
+  @include max(sp) {
+    width: 290px !important;
+  }
 
   a {
     width: 100%;
@@ -730,10 +737,14 @@ main {
 
 
 .recruit__btn {
-  width: 30% !important;
+  width: 380px!important;
   display: block;
   margin-left: auto;
   margin-right: auto;
+
+  @include max(sp) {
+    width: 290px !important;
+  }
 }
 }
 

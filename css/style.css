@@ -309,6 +309,11 @@ footer
   border-top: 3px solid #ffffff;
   shape-outside: url(../img/arrow.png);
 }
+@media only screen and (max-width: 899px) {
+  .footer .contentsWrap {
+    width: 100%;
+  }
+}
 .footer-arrow {
   position: fixed;
   right: 1rem;
@@ -340,7 +345,10 @@ footer
 }
 @media only screen and (max-width: 899px) {
   .footer-companyBlock {
-    width: 100%;
+    width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     border-right: none;
     padding: 1rem 0;
   }
@@ -385,9 +393,29 @@ footer
 }
 @media only screen and (max-width: 899px) {
   .footer-menuBlock {
-    width: 100%;
-    border-top: solid 2px #ffffff;
+    width: 90%;
     padding: 1rem 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
+  .footer-menuBlock::before {
+    position: absolute;
+    content: "";
+    width: 200%;
+    height: 2px;
+    background-color: #ffffff;
+    top: 0;
+    right: 50%;
+  }
+  .footer-menuBlock::after {
+    position: absolute;
+    content: "";
+    width: 200%;
+    height: 2px;
+    background-color: #ffffff;
+    top: 0;
+    left: 50%;
   }
 }
 
@@ -567,7 +595,7 @@ main {
 
 /* ----------------button2----------------- */
 .commonButton2 {
-  width: 80% !important;
+  width: 380px !important;
   height: clamp(4.375rem, 4.167rem + 0.42vw, 4.688rem);
   background: rgb(0, 159, 230);
   background: linear-gradient(90deg, rgb(0, 159, 230) 0%, rgb(52, 255, 243) 100%);
@@ -577,6 +605,7 @@ main {
   .commonButton2 {
     margin-left: auto;
     margin-right: auto;
+    width: 290px !important;
   }
 }
 .commonButton2-rightBlock {
@@ -608,11 +637,16 @@ main {
 }
 
 .commonButton {
-  width: 40% !important;
+  width: 380px;
   height: clamp(4.375rem, 4.167rem + 0.42vw, 4.688rem);
   background: rgb(0, 159, 230);
   background: linear-gradient(90deg, rgb(0, 159, 230) 0%, rgb(52, 255, 243) 100%);
   margin-top: 3rem;
+}
+@media only screen and (max-width: 899px) {
+  .commonButton {
+    width: 290px !important;
+  }
 }
 .commonButton a {
   width: 100%;
@@ -993,10 +1027,15 @@ main {
   }
 }
 .common__recruit .recruit__btn {
-  width: 30% !important;
+  width: 380px !important;
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+@media only screen and (max-width: 899px) {
+  .common__recruit .recruit__btn {
+    width: 290px !important;
+  }
 }
 
 /* ----------------CONTACT----------------- */

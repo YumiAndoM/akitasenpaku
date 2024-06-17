@@ -12,6 +12,12 @@ footer
 
   // position: relative;
 
+  .contentsWrap {
+    @include max(sp) {
+      width: 100%;
+    }
+  }
+
   &-arrow {
     // position: absolute;
     position: fixed;
@@ -46,7 +52,10 @@ footer
   padding-bottom: 3%;
 
   @include max(sp) {
-    width: 100%;
+    width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     border-right: none;
     padding: 1rem 0;
   }
@@ -102,9 +111,33 @@ footer
   padding-bottom: 3%;
 
   @include max(sp) {
-    width: 100%;
-    border-top: solid 2px $cWhite;
+    width: 90%;
+    // border-top: solid 2px $cWhite;
     padding: 1rem 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 200%;
+      height: 2px;
+      background-color: $cWhite;
+      top: 0;
+      right: 50%;
+      // transform: translateX(-50%);
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 200%;
+      height: 2px;
+      background-color: $cWhite;
+      top: 0;
+      left: 50%;
+    }
   }
 }
 
