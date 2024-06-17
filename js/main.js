@@ -26,22 +26,7 @@ $("#g-nav a").click(function () {//ナビゲーションのリンクがクリッ
 
 //画像の設定
 
-var windowwidth = window.innerWidth || document.documentElement.clientWidth || 0;
-		if (windowwidth > 900){
-			var responsiveImage = [//PC用の画像
-				{ src: './img/akita01.jpg'},
-				{ src: './img/akita02.jpg'},
-        { src: './img/akita03.jpg'},
-        { src: './img/akita04.jpg'}
-			];
-		} else {
-			var responsiveImage = [//タブレットサイズ（768px）以下用の画像
-				{ src: './img/akita01.jpg'},
-				{ src: './img/akita02.jpg'},
-        { src: './img/akita03.jpg'},
-        { src: './img/akita04.jpg'}
-			];
-		}
+
 
 
 

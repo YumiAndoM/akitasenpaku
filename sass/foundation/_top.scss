@@ -13,18 +13,21 @@ top
 #vegas-slider {
     width: 100%;
     height: 100vh;/*スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
+    bottom: 0;
 
     .catchCopy {
       position: relative;
-      // bottom: 50px;
+      bottom: 50px;
       left: 50%;
       transform: translateX(-50%);
-      font-size: clamp(4.5rem, 4.167rem + 0.67vw, 5rem);
+      // ↓font-size: clamp(60, 80, 900, 2000);
+      font-size: clamp(3.75rem, 2.727rem + 1.82vw, 5rem);
       color: $cWhite;
       text-align: center;
-      // margin-top: 60vh;
+      // margin-top: 80vh;
       // margin-top: clamp(37.5rem, 33.333rem + 8.33vw, 43.75rem);
-      margin-top: clamp(9.375rem, 7.292rem + 4.17vw, 12.5rem);
+      // margin-top: clamp(9.375rem, 7.292rem + 4.17vw, 12.5rem);
+      margin-top: clamp(37.5rem, 32.386rem + 9.09vw, 43.75rem);
       
 
       @include max(pc) {
@@ -36,10 +39,13 @@ top
       @include max(sp) {
         font-size: clamp(2.5rem, 1.74rem + 3.58vw, 3.75rem);
         line-height: 4rem;
+        bottom: 200px;
       }
       
       span {
-        font-size: clamp(3.5rem, 3.167rem + 0.67vw, 4rem);
+        // font-size: clamp(3.5rem, 3.167rem + 0.67vw, 4rem);
+        // ↓　font-size: clamp(44, 64, 330, 899);
+        font-size: clamp(2.75rem, 2.025rem + 3.51vw, 4rem);
         font-family: "Noto Serif JP", serif;
         font-optical-sizing: auto;
         font-weight: 600;
@@ -134,14 +140,15 @@ top
 
 .top__news {
 
-  height: auto;
+  // height: auto;
   background: $cWhite;
-  padding-top: 2rem;
+  padding-top: 3rem;
   padding-bottom: 2rem;
 }
 
 .newsBlock {
   display: flex;
+  align-items: center;
 
   @include max(sp) {
     flex-direction: column;
@@ -177,13 +184,24 @@ width: 70%;
   margin-top: 1rem;
 }
 
+
   &-li {
     font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
     line-height: 30px;
-    margin-left: 5%;
+    margin-left: 5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.1rem;
+    display: flex;
 
     @include max(sp) {
       font-size: clamp(0.75rem, 0.674rem + 0.36vw, 0.875rem);
+      margin-left: 0;
+
+      .title {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
     }
 
     .date {
@@ -194,8 +212,8 @@ width: 70%;
 
 .to__newsPage {
   display: block;
-  width: 30%;
-  margin-left: 80%;
+  width: 100%;
+  // margin-left: 80%;
   // background-color: aqua;
   text-align: right;
 
@@ -210,6 +228,7 @@ width: 70%;
     color: $cMain;
     position: relative;
     width: 100%;
+    text-align: right;
   }
 }
 
@@ -398,158 +417,213 @@ width: 70%;
 }
 
 
-.business-01Block {
-  width: 100%;
-  height: clamp(25rem, 20.833rem + 8.33vw, 31.25rem);
-  position: relative;
-  // background-color: aqua;
-  // display: block;
+// .business-01Block {
+//   width: 100%;
+//   height: clamp(25rem, 20.833rem + 8.33vw, 31.25rem);
+//   position: relative;
+//   // background-color: aqua;
+//   // display: block;
 
-  .upBlock {
-    position: absolute;
-    right: 0;
-  }
+//   .upBlock {
+//     position: absolute;
+//     right: 0;
+//   }
   
-  .underBlock {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-  }
+//   .underBlock {
+//     position: absolute;
+//     right: 0;
+//     bottom: 0;
+//     width: 100%;
+//   }
 
-  .rightBlock {
-    height: 50%;
-    width: 100%;
-    right: 0;
+//   .rightBlock {
+//     height: 50%;
+//     width: 100%;
+//     right: 0;
     
     
-  }
+//   }
 
-  .leftBlock {
-    width: 100%;
-    height: clamp(25rem, 20.833rem + 8.33vw, 31.25rem);
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    position: absolute;
-    display: block;
+//   .leftBlock {
+//     width: 100%;
+//     height: clamp(25rem, 20.833rem + 8.33vw, 31.25rem);
+//     left: 0;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     position: absolute;
+//     display: block;
     
     
 
     
+//     img {
+//       width: 100%;
+//       height: 100%;
+//       // height: clamp(25rem, 20.833rem + 8.33vw, 31.25rem);
+      
+      
+    
+//     }
+//   }
+
+//   .imgBlock {
+//       width: 50%;
+//       aspect-ratio: 5 / 5 !important;
+//       object-fit: cover;
+//   }
+// }
+
+
+// .subTitleBlock {
+
+//   // margin-top: 3rem;
+//   // margin-bottom: 2rem;
+//   p {
+//     font-size: clamp(1.375rem, 1.167rem + 0.42vw, 1.688rem);
+//     line-height: 2.5rem;
+//     padding-left: 5%;
+//     position: relative;
+//   }
+// }
+
+// .subTitle-p {
+//   &-01 {
+//     &::before {
+//       content: "";
+//       width: 4%;
+//       border: solid 2px $cMain;
+//       position: absolute;
+//       top: 50%;
+//       left: 0;
+//     }
+//   }
+// }
+
+
+
+// .textBlock {
+
+//   &-ul {
+//     margin-bottom: 1rem;
+//   }
+//   &-li {
+//     list-style-type: disc;
+//     font-size: clamp(0.875rem, 0.708rem + 0.33vw, 1.125rem);
+//     line-height: 2rem;
+//     margin-left: 3%;
+//   }
+
+//   &-p {
+//     font-size: clamp(0.875rem, 0.708rem + 0.33vw, 1.125rem);
+//     line-height: 2rem;
+//   }
+// }
+
+
+
+// .business-02Block {
+//   width: 100%;
+  
+
+//   &-imgBlock {
+//     width: 100%;
+//     &-01 {
+//       width: 100%;
+//       height: 300px;
+//       background: url(../img/contents01.jpg);
+//       background-size: 100%;
+//       background-position: center;
+//     }
+
+//     &-02 {
+//       width: 100%;
+//       height: 300px;
+//       background: url(../img/contents02.jpeg);
+//       background-size: 100%;
+//       background-position: center;
+//       margin-top: 3rem;
+//     }
+//   }
+
+//   &-textBlock {
+//     background: $cWhite;
+//     display: block;
+//     width: 20%;
+//     text-align: center;
+//     font-size: clamp(1.375rem, 1.042rem + 0.67vw, 1.875rem);
+//     padding-top: 2%;
+//     padding-bottom: 2%;
+    
+//   }
+// }
+
+// .business-02Block {
+//   &-right-text {
+//     display: flex;
+//     justify-content: flex-end;
+//     align-items: flex-end;
+//   }
+
+//   &-left-text {
+//     display: flex;
+//     align-items: flex-end;
+//   }
+// }
+
+
+.top__business {
+  width: 100%;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+
+  &-block {
+    width: 100%;
+    position: relative;
+    aspect-ratio: 10 / 3;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+
+    @include max(sp) {
+      aspect-ratio: 6 / 4;
+    }
+
     img {
       width: 100%;
       height: 100%;
-      // height: clamp(25rem, 20.833rem + 8.33vw, 31.25rem);
-      
-      
-    
-    }
-  }
-
-  .imgBlock {
-      width: 50%;
-      aspect-ratio: 5 / 5 !important;
       object-fit: cover;
-  }
-}
+    }
 
-
-.subTitleBlock {
-
-  // margin-top: 3rem;
-  // margin-bottom: 2rem;
-  p {
-    font-size: clamp(1.375rem, 1.167rem + 0.42vw, 1.688rem);
-    line-height: 2.5rem;
-    padding-left: 5%;
-    position: relative;
-  }
-}
-
-.subTitle-p {
-  &-01 {
-    &::before {
-      content: "";
-      width: 4%;
-      border: solid 2px $cMain;
+    &-text {
+      font-size: clamp(1.75rem, 1.648rem + 0.18vw, 1.875rem);
+      width: 200px;
+      display: block;
+      background-color: $cWhite;
+      text-align: center;
       position: absolute;
-      top: 50%;
-      left: 0;
-    }
-  }
-}
+      bottom: 0;
+      height: 50px;
+      line-height: 50px;
 
+      @include max(sp) {
+        font-size: clamp(1rem, 0.855rem + 0.7vw, 1.25rem);
+        width: 100px;
+        height: 40px;
+        line-height: 40px;
+      }
 
+      &-01,
+      &-02 {
+      position: absolute;
+      bottom: 0;
+      z-index: 2;
+      
+      }
 
-.textBlock {
-
-  &-ul {
-    margin-bottom: 1rem;
-  }
-  &-li {
-    list-style-type: disc;
-    font-size: clamp(0.875rem, 0.708rem + 0.33vw, 1.125rem);
-    line-height: 2rem;
-    margin-left: 3%;
-  }
-
-  &-p {
-    font-size: clamp(0.875rem, 0.708rem + 0.33vw, 1.125rem);
-    line-height: 2rem;
-  }
-}
-
-
-
-.business-02Block {
-  width: 100%;
-  
-
-  &-imgBlock {
-    width: 100%;
-    &-01 {
-      width: 100%;
-      height: 300px;
-      background: url(../img/contents01.jpg);
-      background-size: 100%;
-      background-position: center;
+      &-02 {
+        right: 0;
+      }
     }
 
-    &-02 {
-      width: 100%;
-      height: 300px;
-      background: url(../img/contents02.jpeg);
-      background-size: 100%;
-      background-position: center;
-      margin-top: 3rem;
-    }
-  }
-
-  &-textBlock {
-    background: $cWhite;
-    display: block;
-    width: 20%;
-    text-align: center;
-    font-size: clamp(1.375rem, 1.042rem + 0.67vw, 1.875rem);
-    padding-top: 2%;
-    padding-bottom: 2%;
     
   }
 }
-
-.business-02Block {
-  &-right-text {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-  }
-
-  &-left-text {
-    display: flex;
-    align-items: flex-end;
-  }
-}
-
-
-

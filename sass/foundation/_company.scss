@@ -40,7 +40,13 @@ COMPANY 会社案内
 
       &-p {
         font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
-        line-height: 1.5rem;
+        line-height: 2rem;
+        font-family: "Noto Serif JP", serif;
+          font-optical-sizing: auto;
+          font-weight: 600;
+          font-style: normal;
+          letter-spacing: 0.1rem;
+          margin-bottom: 1rem;
 
         @include max(sp) {
           font-size: clamp(0.75rem, 0.674rem + 0.36vw, 0.875rem);
@@ -55,6 +61,7 @@ COMPANY 会社案内
           font-optical-sizing: auto;
           font-weight: 600;
           font-style: normal;
+          letter-spacing: 0.1rem;
         }
       }
     }
@@ -170,6 +177,7 @@ COMPANY 会社案内
 
     &-p {
       line-height: 1.5rem;
+      font-weight: normal;
 
       @include max(sp) {
           font-size: clamp(0.75rem, 0.674rem + 0.36vw, 0.875rem);
@@ -187,7 +195,7 @@ COMPANY 会社案内
   width: 100%;
   // background: $cWhiteOpa;
   padding-top: 2rem;
-  padding-bottom: 3rem;
+  padding-bottom: 7rem;
 
   &-imgBlock {
     width: 100%;

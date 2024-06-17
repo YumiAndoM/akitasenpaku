@@ -1,5 +1,8 @@
 @use "../global" as *;
 
+
+
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 10em;
@@ -11,13 +14,16 @@ html {
 
 
 .contentsWrap {
-  // @include pcContents;
-  width: clamp(46.875rem, 36.458rem + 20.83vw, 62.5rem);
+  // @include pcContents;1
+  width: clamp(45rem, 80vw, 100rem);
+
   margin-left: auto;
   margin-right: auto;
 
   @include max(sp) {
-    width: clamp(20rem, 9.356rem + 50.09vw, 37.5rem);
+    // width: clamp(20rem, 9.356rem + 50.09vw, 37.5rem);
+    // clamp(297, 719, 330, 899)
+    width: clamp(18.563rem, 3.266rem + 74.17vw, 44.938rem);
   }
 }
 
@@ -630,7 +636,8 @@ main {
     &-positionBlock {
       position: absolute;
       width: clamp(22.5rem, 18.75rem + 7.5vw, 28.125rem);
-      top: clamp(9.375rem, 7.292rem + 4.17vw, 12.5rem);
+      // top: clamp(9.375rem, 7.292rem + 4.17vw, 12.5rem);
+      bottom: clamp(0rem, -15.341rem + 27.27vw, 18.75rem);
 
       @include max(sp) {
         position: static;
@@ -673,6 +680,7 @@ main {
       width: 90%;
       aspect-ratio: 1 / 1;
       margin-left: auto;
+      padding-left: 2%;
 
       @include max(sp) {
         width: 100%;
@@ -684,6 +692,11 @@ main {
         height: 100%;
         object-fit: cover;
         display: block;
+        padding-left: 2rem;
+
+        @include max(sp) {
+          padding-left: 0;
+        }
 
       }
     }
@@ -710,6 +723,9 @@ main {
   //     padding-bottom: 2rem;
   //   }
   // }
+  @include max(sp) {
+    padding-bottom: 1rem;
+  }
 }
 
 .contact-title {
@@ -735,6 +751,7 @@ main {
 
     @include max(sp) {
       width: 100%;
+      margin-bottom: 2rem;
     }
     
 
@@ -762,6 +779,15 @@ main {
     border: 3px solid $cWhite;
     color: $cWhite;
     position: relative;
+
+    &:hover {
+      background-color: rgb(52,255,243);
+      background-color: linear-gradient(280deg, rgba(52,255,243,1) 0%, rgba(0,159,230,1) 100%);
+      text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
+      font-weight: bold;
+
+      transition: background-color 1s;
+    }
 
     span {
       // padding-bottom: 4%;
@@ -796,16 +822,49 @@ main {
 .contact-telBlock {
   background: $cWhite;
   line-height: 2.5rem;
-  padding: 30px 0;
+  // padding: 30px 0;
   // display: flex;
   // justify-content: center;
   // align-items: center;
   // flex-wrap: wrap;
   // flex-direction: column;
 
-  color: #026D9D;
-
-  span {
+  a {
+    width: 100%;
+    height: 130px;
+    // margin-top: 0;
+    display: block;
     color: #026D9D;
+    // background-color: aqua;
+    padding: 30px 0;
+
+    &:hover {
+      height: 100%;
+      height: 130px;
+      padding-top: 0;
+      background-color: rgb(52,255,243);
+      background-color: linear-gradient(280deg, rgba(52,255,243,1) 0%, rgba(0,159,230,1) 100%);
+      text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
+      font-weight: bold;
+      padding: 30px 0;
+
+      transition: background-color 1s;
+      color: $cWhite;
+
+      transition: color 1s;
+
+      span {
+        color: $cWhite;
+        transition:  color 1s;
+      }
+    }
+
+    span {
+    color: #026D9D;
+    }
   }
+
+  
+
+  
 }

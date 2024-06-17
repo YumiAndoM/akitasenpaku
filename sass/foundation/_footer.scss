@@ -8,6 +8,7 @@ footer
   width: 100%;
   background: #393939;
   border-top: 3px solid $cWhite;
+  shape-outside: url(../img/arrow.png);
 
   // position: relative;
 
@@ -16,6 +17,8 @@ footer
     position: fixed;
     right: 1rem;
     bottom: 5rem;
+    // box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+    filter: drop-shadow(3px 3px 3px #999);
 
     img {
       @include max(sp) {
@@ -105,7 +108,7 @@ footer
 
 .footer-menu-li {
   font-size: clamp(0.875rem, 0.708rem + 0.33vw, 1.125rem);
-  line-height: 1.5rem;
+  line-height: 2.5rem;
   color: $cWhite;
 
   @include max(sp) {
@@ -130,6 +133,10 @@ footer
       line-height: 2rem;
     }
     
+  }
+
+  &-sub {
+    line-height: 2rem !important;
   }
 }
 

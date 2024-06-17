@@ -299,11 +299,13 @@ footer
   width: 100%;
   background: #393939;
   border-top: 3px solid #ffffff;
+  shape-outside: url(../img/arrow.png);
 }
 .footer-arrow {
   position: fixed;
   right: 1rem;
   bottom: 5rem;
+  filter: drop-shadow(3px 3px 3px #999);
 }
 @media only screen and (max-width: 899px) {
   .footer-arrow img {
@@ -381,7 +383,7 @@ footer
 
 .footer-menu-li {
   font-size: clamp(0.875rem, 0.708rem + 0.33vw, 1.125rem);
-  line-height: 1.5rem;
+  line-height: 2.5rem;
   color: #ffffff;
 }
 @media only screen and (max-width: 899px) {
@@ -406,6 +408,9 @@ footer
     line-height: 2rem;
   }
 }
+.footer-menu-li-sub {
+  line-height: 2rem !important;
+}
 
 /* ----------------コピーライト----------------- */
 .footer-copyRight {
@@ -429,13 +434,13 @@ html {
 }
 
 .contentsWrap {
-  width: clamp(46.875rem, 36.458rem + 20.83vw, 62.5rem);
+  width: clamp(45rem, 80vw, 100rem);
   margin-left: auto;
   margin-right: auto;
 }
 @media only screen and (max-width: 899px) {
   .contentsWrap {
-    width: clamp(20rem, 9.356rem + 50.09vw, 37.5rem);
+    width: clamp(18.563rem, 3.266rem + 74.17vw, 44.938rem);
   }
 }
 
@@ -904,7 +909,7 @@ main {
 .common__recruit-block-positionBlock {
   position: absolute;
   width: clamp(22.5rem, 18.75rem + 7.5vw, 28.125rem);
-  top: clamp(9.375rem, 7.292rem + 4.17vw, 12.5rem);
+  bottom: clamp(0rem, -15.341rem + 27.27vw, 18.75rem);
 }
 @media only screen and (max-width: 899px) {
   .common__recruit-block-positionBlock {
@@ -937,6 +942,7 @@ main {
   width: 90%;
   aspect-ratio: 1/1;
   margin-left: auto;
+  padding-left: 2%;
 }
 @media only screen and (max-width: 899px) {
   .common__recruit-flexBox-imgBlock {
@@ -950,6 +956,12 @@ main {
   -o-object-fit: cover;
      object-fit: cover;
   display: block;
+  padding-left: 2rem;
+}
+@media only screen and (max-width: 899px) {
+  .common__recruit-flexBox-imgBlock img {
+    padding-left: 0;
+  }
 }
 
 /* ----------------CONTACT----------------- */
@@ -958,6 +970,11 @@ main {
   background: #026D9D;
   padding-top: 2rem;
   padding-bottom: 3rem;
+}
+@media only screen and (max-width: 899px) {
+  .common__contact {
+    padding-bottom: 1rem;
+  }
 }
 
 .contact-title {
@@ -984,6 +1001,7 @@ main {
 @media only screen and (max-width: 899px) {
   .contactWrap-ul-item {
     width: 100%;
+    margin-bottom: 2rem;
   }
 }
 .contactWrap-ul-item span {
@@ -1005,6 +1023,13 @@ main {
   color: #ffffff;
   position: relative;
 }
+.contact-webBlock a:hover {
+  background-color: rgb(52, 255, 243);
+  background-color: linear-gradient(280deg, rgb(52, 255, 243) 0%, rgb(0, 159, 230) 100%);
+  text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  transition: background-color 1s;
+}
 .contact-webBlock a span {
   padding-bottom: clamp(0.938rem, 0.813rem + 0.25vw, 1.125rem);
 }
@@ -1020,10 +1045,32 @@ main {
 .contact-telBlock {
   background: #ffffff;
   line-height: 2.5rem;
-  padding: 30px 0;
-  color: #026D9D;
 }
-.contact-telBlock span {
+.contact-telBlock a {
+  width: 100%;
+  height: 130px;
+  display: block;
+  color: #026D9D;
+  padding: 30px 0;
+}
+.contact-telBlock a:hover {
+  height: 100%;
+  height: 130px;
+  padding-top: 0;
+  background-color: rgb(52, 255, 243);
+  background-color: linear-gradient(280deg, rgb(52, 255, 243) 0%, rgb(0, 159, 230) 100%);
+  text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  padding: 30px 0;
+  transition: background-color 1s;
+  color: #ffffff;
+  transition: color 1s;
+}
+.contact-telBlock a:hover span {
+  color: #ffffff;
+  transition: color 1s;
+}
+.contact-telBlock a span {
   color: #026D9D;
 }
 
@@ -1034,15 +1081,17 @@ top
 #vegas-slider {
   width: 100%;
   height: 100vh; /*スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
+  bottom: 0;
 }
 #vegas-slider .catchCopy {
   position: relative;
+  bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: clamp(4.5rem, 4.167rem + 0.67vw, 5rem);
+  font-size: clamp(3.75rem, 2.727rem + 1.82vw, 5rem);
   color: #ffffff;
   text-align: center;
-  margin-top: clamp(9.375rem, 7.292rem + 4.17vw, 12.5rem);
+  margin-top: clamp(37.5rem, 32.386rem + 9.09vw, 43.75rem);
 }
 @media only screen and (min-width: 900px) {
   #vegas-slider .catchCopy br {
@@ -1053,10 +1102,11 @@ top
   #vegas-slider .catchCopy {
     font-size: clamp(2.5rem, 1.74rem + 3.58vw, 3.75rem);
     line-height: 4rem;
+    bottom: 200px;
   }
 }
 #vegas-slider .catchCopy span {
-  font-size: clamp(3.5rem, 3.167rem + 0.67vw, 4rem);
+  font-size: clamp(2.75rem, 2.025rem + 3.51vw, 4rem);
   font-family: "Noto Serif JP", serif;
   font-optical-sizing: auto;
   font-weight: 600;
@@ -1147,14 +1197,14 @@ top
 
 /* ----------------section NEWS----------------- */
 .top__news {
-  height: auto;
   background: #ffffff;
-  padding-top: 2rem;
+  padding-top: 3rem;
   padding-bottom: 2rem;
 }
 
 .newsBlock {
   display: flex;
+  align-items: center;
 }
 @media only screen and (max-width: 899px) {
   .newsBlock {
@@ -1196,11 +1246,20 @@ top
 .top__news-contentsBlock-li {
   font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
   line-height: 30px;
-  margin-left: 5%;
+  margin-left: 5rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.1rem;
+  display: flex;
 }
 @media only screen and (max-width: 899px) {
   .top__news-contentsBlock-li {
     font-size: clamp(0.75rem, 0.674rem + 0.36vw, 0.875rem);
+    margin-left: 0;
+  }
+  .top__news-contentsBlock-li .title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
 }
 .top__news-contentsBlock-li .date {
@@ -1209,8 +1268,7 @@ top
 
 .to__newsPage {
   display: block;
-  width: 30%;
-  margin-left: 80%;
+  width: 100%;
   text-align: right;
 }
 @media only screen and (max-width: 899px) {
@@ -1224,6 +1282,7 @@ top
   color: #009FE6;
   position: relative;
   width: 100%;
+  text-align: right;
 }
 
 /* ----------------section MOVIE----------------- */
@@ -1361,115 +1420,55 @@ top
   padding-top: 3rem;
 }
 
-.business-01Block {
+.top__business {
   width: 100%;
-  height: clamp(25rem, 20.833rem + 8.33vw, 31.25rem);
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+.top__business-block {
+  width: 100%;
   position: relative;
+  aspect-ratio: 10/3;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
 }
-.business-01Block .upBlock {
-  position: absolute;
-  right: 0;
+@media only screen and (max-width: 899px) {
+  .top__business-block {
+    aspect-ratio: 6/4;
+  }
 }
-.business-01Block .underBlock {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-}
-.business-01Block .rightBlock {
-  height: 50%;
-  width: 100%;
-  right: 0;
-}
-.business-01Block .leftBlock {
-  width: 100%;
-  height: clamp(25rem, 20.833rem + 8.33vw, 31.25rem);
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  position: absolute;
-  display: block;
-}
-.business-01Block .leftBlock img {
+.top__business-block img {
   width: 100%;
   height: 100%;
-}
-.business-01Block .imgBlock {
-  width: 50%;
-  aspect-ratio: 5/5 !important;
   -o-object-fit: cover;
      object-fit: cover;
 }
-
-.subTitleBlock p {
-  font-size: clamp(1.375rem, 1.167rem + 0.42vw, 1.688rem);
-  line-height: 2.5rem;
-  padding-left: 5%;
-  position: relative;
-}
-
-.subTitle-p-01::before {
-  content: "";
-  width: 4%;
-  border: solid 2px #009FE6;
-  position: absolute;
-  top: 50%;
-  left: 0;
-}
-
-.textBlock-ul {
-  margin-bottom: 1rem;
-}
-.textBlock-li {
-  list-style-type: disc;
-  font-size: clamp(0.875rem, 0.708rem + 0.33vw, 1.125rem);
-  line-height: 2rem;
-  margin-left: 3%;
-}
-.textBlock-p {
-  font-size: clamp(0.875rem, 0.708rem + 0.33vw, 1.125rem);
-  line-height: 2rem;
-}
-
-.business-02Block {
-  width: 100%;
-}
-.business-02Block-imgBlock {
-  width: 100%;
-}
-.business-02Block-imgBlock-01 {
-  width: 100%;
-  height: 300px;
-  background: url(../img/contents01.jpg);
-  background-size: 100%;
-  background-position: center;
-}
-.business-02Block-imgBlock-02 {
-  width: 100%;
-  height: 300px;
-  background: url(../img/contents02.jpeg);
-  background-size: 100%;
-  background-position: center;
-  margin-top: 3rem;
-}
-.business-02Block-textBlock {
-  background: #ffffff;
+.top__business-block-text {
+  font-size: clamp(1.75rem, 1.648rem + 0.18vw, 1.875rem);
+  width: 200px;
   display: block;
-  width: 20%;
+  background-color: #ffffff;
   text-align: center;
-  font-size: clamp(1.375rem, 1.042rem + 0.67vw, 1.875rem);
-  padding-top: 2%;
-  padding-bottom: 2%;
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  line-height: 50px;
 }
-
-.business-02Block-right-text {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+@media only screen and (max-width: 899px) {
+  .top__business-block-text {
+    font-size: clamp(1rem, 0.855rem + 0.7vw, 1.25rem);
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+  }
 }
-.business-02Block-left-text {
-  display: flex;
-  align-items: flex-end;
+.top__business-block-text-01, .top__business-block-text-02 {
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+}
+.top__business-block-text-02 {
+  right: 0;
 }
 
 /* ---------------------------------
@@ -1508,7 +1507,13 @@ COMPANY 会社案内
 }
 .company__messageBlock-positionBlock-textBlock-p {
   font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
-  line-height: 1.5rem;
+  line-height: 2rem;
+  font-family: "Noto Serif JP", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.1rem;
+  margin-bottom: 1rem;
 }
 @media only screen and (max-width: 899px) {
   .company__messageBlock-positionBlock-textBlock-p {
@@ -1524,6 +1529,7 @@ COMPANY 会社案内
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
+  letter-spacing: 0.1rem;
 }
 
 /* ----------------COMPANY PHILOSOPHY（経営理念）----------------- */
@@ -1618,6 +1624,7 @@ COMPANY 会社案内
 }
 .company__policy-textBlock-p {
   line-height: 1.5rem;
+  font-weight: normal;
 }
 @media only screen and (max-width: 899px) {
   .company__policy-textBlock-p {
@@ -1630,7 +1637,7 @@ COMPANY 会社案内
 .company__company {
   width: 100%;
   padding-top: 2rem;
-  padding-bottom: 3rem;
+  padding-bottom: 7rem;
 }
 .company__company-imgBlock {
   width: 100%;
@@ -1861,12 +1868,17 @@ BUSINESS　事業概要
 /* ----------------BUSINESS FACILITY　（施設紹介）----------------- */
 .business__facility {
   width: 100%;
-  height: 100%;
+  height: clamp(43.75rem, 41.193rem + 4.55vw, 46.875rem);
   display: block;
   background: rgb(255, 255, 255);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(8, 172, 162, 0.7) 100%);
   padding-top: 2rem;
   padding-bottom: 5rem;
+}
+@media only screen and (max-width: 899px) {
+  .business__facility {
+    height: 100%;
+  }
 }
 .business__facility-wrap {
   width: 100%;
@@ -1888,6 +1900,7 @@ BUSINESS　事業概要
   .business__facility-wrap-positionBlock {
     position: static;
     width: 100%;
+    padding-bottom: 0;
   }
 }
 .business__facility-flexBlock {
@@ -1914,6 +1927,8 @@ BUSINESS　事業概要
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: center bottom;
+     object-position: center bottom;
 }
 .business__facility-flexBlock-flexBox .rightImg {
   display: block;
@@ -1921,8 +1936,9 @@ BUSINESS　事業概要
 }
 
 .facility__textBlock {
-  width: 50%;
+  width: 70%;
   background-color: #ffffff;
+  padding: 2%;
 }
 @media only screen and (max-width: 899px) {
   .facility__textBlock {
@@ -1931,19 +1947,22 @@ BUSINESS　事業概要
 }
 .facility__textBlock-p {
   font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
-  line-height: 1.2rem;
+  line-height: 1.5rem;
 }
 
 .facility__tableBlock {
-  width: 100%;
+  width: 600px;
+  overflow-x: scroll !important;
 }
 @media only screen and (max-width: 899px) {
   .facility__tableBlock {
+    width: 100%;
     overflow-x: scroll !important;
+    margin-top: 2rem;
   }
 }
 .facility__tableBlock table {
-  width: 100%;
+  width: 800px;
   background-color: #ffffff;
   font-size: clamp(0.75rem, 0.667rem + 0.17vw, 0.875rem);
 }
@@ -2334,9 +2353,6 @@ NEWS (details)
     width: 90%;
     justify-content: center;
     justify-content: flex-start;
-  }
-  .Form-Item-Label br {
-    display: none;
   }
 }
 .Form-Item-Label-Required, .Form-Item-Label-Arbitrary {
