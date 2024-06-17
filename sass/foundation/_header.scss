@@ -35,7 +35,9 @@ h1 a {
   transition: fill 1s;
 
   @include max(sp) {
-    width: clamp(17.5rem, 14.839rem + 12.52vw, 21.875rem);
+    // width: clamp(17.5rem, 14.839rem + 12.52vw, 21.875rem);
+    width: clamp(15.625rem, 13.813rem + 8.79vw, 18.75rem);
+    padding-left: 1%;
   }
 }
 

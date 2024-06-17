@@ -148,7 +148,7 @@ COMPANY 会社案内
       font-weight: bold;
       margin-bottom: 2rem;
       position: relative;
-      padding-left: 5%;
+      padding-left: 4%;
 
       @include max(pc) {
         br {
@@ -163,7 +163,7 @@ COMPANY 会社案内
 
       &::before {
         content: "";
-        width: 4%;
+        width: 2%;
         border: solid 2px $cMain;
         position: absolute;
         top: 50%;
@@ -177,7 +177,7 @@ COMPANY 会社案内
 
     &-p {
       line-height: 1.5rem;
-      font-weight: normal;
+      // font-weight: normal;
 
       @include max(sp) {
           font-size: clamp(0.75rem, 0.674rem + 0.36vw, 0.875rem);

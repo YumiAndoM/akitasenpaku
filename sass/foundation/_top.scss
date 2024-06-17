@@ -78,7 +78,7 @@ top
 	left:10px;
 	bottom:10px;
     /*テキストの形状*/
-	color: $cBlack;
+	color: $cWhite;
 	font-size: 0.7rem;
 	letter-spacing: 0.05em;
 	/*縦書き設定*/
@@ -98,7 +98,7 @@ top
 	width:10px;
 	height:10px;
 	border-radius: 50%;
-	background:$cBlack;
+	background:$cWhite;
     /*丸の動き1.6秒かけて透過し、永遠にループ*/
 	animation:
 		circlemove 1.6s ease-in-out infinite,
@@ -129,7 +129,7 @@ top
     /*線の形状*/
 	width:2px;
 	height: 50px;
-	background: $cBlack;
+	background: $cWhite;
 }
 
 
@@ -319,7 +319,7 @@ width: 70%;
   height: 100%;
 
   padding-top: 3rem;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
 }
 .top__strong-title {
   font-size: clamp(3rem, 2.333rem + 1.33vw, 4rem);
@@ -381,15 +381,24 @@ width: 70%;
     background: $cWhite;
     padding: 2%;
 
+    @include max(pc) {
+      width: 33% !important;
+    }
+    
+
     @include max(sp) {
       padding: 1%;
     }
 
-    img {
+    .iconWrap {
       width: 50%;
       display: block;
       margin-left: auto;
       margin-right: auto;
+
+      i {
+        color: $cMain;
+      }
     }
   }
 }
@@ -594,7 +603,9 @@ width: 70%;
     }
 
     &-text {
-      font-size: clamp(1.75rem, 1.648rem + 0.18vw, 1.875rem);
+      // font-size: clamp(1.75rem, 1.648rem + 0.18vw, 1.875rem);
+      font-size: 22px;
+      letter-spacing: 0.1rem;
       width: 200px;
       display: block;
       background-color: $cWhite;

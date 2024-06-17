@@ -7,6 +7,10 @@
 .slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
     width:94%;
     margin:0 auto;
+
+    @include max(pc) {
+        width: 100%;
+    }
 }
 
 .slider img {
@@ -17,7 +21,7 @@
 /*slickのJSで書かれるタグ内、スライド左右の余白調整*/
 
 .slider .slick-slide {
-    margin:0 10px;
+    margin:0 1px;
 }
 
 /*矢印の設定*/

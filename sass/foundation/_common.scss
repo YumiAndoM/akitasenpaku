@@ -15,7 +15,11 @@ html {
 
 .contentsWrap {
   // @include pcContents;1
-  width: clamp(45rem, 80vw, 100rem);
+  // width: clamp(45rem, 80vw, 100rem);
+  // width: 1152px;
+  // width: 100%;
+  // max-width: 1008px;
+  width: clamp(45rem, 15rem + 53.33vw, 63rem);
 
   margin-left: auto;
   margin-right: auto;
@@ -480,6 +484,8 @@ main {
           margin-left: 5%;
           position: relative;
           display: block;
+          font-weight: medium;
+          font-weight: 500;
 
           &.beforeBorder {
             &::before {
@@ -561,8 +567,24 @@ main {
       margin-bottom: 1rem;
     }
     &-li {
-      font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
-      line-height: 1.5rem;
+      // font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
+      font-size: 18px;
+      line-height: 2rem;
+      list-style-type: disc;
+      list-style-position: inside;
+
+      @include max(sp) {
+        font-size: 16px;
+      }
+    }
+
+    &-p {
+      font-size: 18px;
+      margin-top: 2rem;
+
+      @include max(sp) {
+        font-size: 16px;
+      }
     }
   }
 }
@@ -620,7 +642,9 @@ main {
   // }
 
   &::after {
-    background-color: $cDarkBlue;
+    // background-color: $cDarkBlue;
+    background: rgb(8,172,162);
+    background: linear-gradient(180deg, rgba(8,172,162,1) 0%, rgba(2,109,157,1) 100%);
     position: absolute;
     content: "";
     width: 100%;
@@ -637,7 +661,8 @@ main {
       position: absolute;
       width: clamp(22.5rem, 18.75rem + 7.5vw, 28.125rem);
       // top: clamp(9.375rem, 7.292rem + 4.17vw, 12.5rem);
-      bottom: clamp(0rem, -15.341rem + 27.27vw, 18.75rem);
+      // bottom: clamp(0rem, -15.341rem + 27.27vw, 18.75rem);
+      bottom: 200px;
 
       @include max(sp) {
         position: static;
@@ -677,7 +702,7 @@ main {
   &-flexBox {
 
     &-imgBlock {
-      width: 90%;
+      width: 80%;
       aspect-ratio: 1 / 1;
       margin-left: auto;
       padding-left: 2%;
@@ -704,6 +729,12 @@ main {
 
 
 
+.recruit__btn {
+  width: 30% !important;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 }
 
 
@@ -779,14 +810,11 @@ main {
     border: 3px solid $cWhite;
     color: $cWhite;
     position: relative;
+    font-weight: bold;
 
     &:hover {
-      background-color: rgb(52,255,243);
-      background-color: linear-gradient(280deg, rgba(52,255,243,1) 0%, rgba(0,159,230,1) 100%);
-      text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
-      font-weight: bold;
-
-      transition: background-color 1s;
+      opacity: 0.5;
+      transition: opacity 1s;
     }
 
     span {
@@ -797,7 +825,7 @@ main {
     img {
       width: 50px;
       height: 50px;
-      padding-left: 1%;
+      margin-left: 1%;
     }
 
     // &::after {
@@ -822,6 +850,7 @@ main {
 .contact-telBlock {
   background: $cWhite;
   line-height: 2.5rem;
+  
   // padding: 30px 0;
   // display: flex;
   // justify-content: center;
@@ -837,26 +866,16 @@ main {
     color: #026D9D;
     // background-color: aqua;
     padding: 30px 0;
+    font-weight: bold;
 
     &:hover {
-      height: 100%;
-      height: 130px;
-      padding-top: 0;
-      background-color: rgb(52,255,243);
-      background-color: linear-gradient(280deg, rgba(52,255,243,1) 0%, rgba(0,159,230,1) 100%);
-      text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
-      font-weight: bold;
-      padding: 30px 0;
+      opacity: 0.5;
+      transition: opacity 1s;
 
-      transition: background-color 1s;
-      color: $cWhite;
-
-      transition: color 1s;
-
-      span {
-        color: $cWhite;
-        transition:  color 1s;
-      }
+      // span {
+      //   color: $cWhite;
+      //   transition:  color 1s;
+      // }
     }
 
     span {

@@ -25,6 +25,7 @@
 
     @include max(sp) {
       width: 100%;
+      padding-left: 0;
     }
   }
 
@@ -35,6 +36,8 @@
 
     @include max(sp) {
       width: 100%;
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 
@@ -51,6 +54,7 @@
       width: 90%;
       justify-content: center;
       justify-content: flex-start;
+      font-size: 16px;
 
 
       // br {
@@ -97,11 +101,99 @@
   .wpcf7-radio {
     display: flex;
     flex-wrap: wrap;
-    font-size: clamp(0.688rem, 0.646rem + 0.08vw, 0.75rem);
-    line-height: 1.5rem;
+    align-items: center;
+    // font-size: clamp(0.688rem, 0.646rem + 0.08vw, 0.75rem);
+    // line-height: 1.5rem;
+
+    @include max(sp) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    input {
+      // line-height: 16px;
+      margin-top: 0;
+    }
   }
 }
 
+
+// ラジオボタン
+.wpcf7-list {
+
+
+  &-item {
+    margin-right: 2rem;
+    
+
+input[type="radio"] {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+
+.wpcf7-list-item.first {
+  margin-left: 0;
+}
+
+span.wpcf7-list-item-label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  line-height: 3rem;
+
+  @include max(sp) {
+    line-height: 2rem;
+    font-size: 13px;
+  }
+}
+
+span.wpcf7-list-item-label::before {
+  display: block;
+  content: "";
+  border-radius: 4px;
+  border: 1px solid $cBlack;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  margin-top: 2px;
+}
+
+span.wpcf7-list-item-label::after {
+  display: block;
+  position: absolute;
+  content: "";
+  border-radius: 1px;
+  width: 6px;
+  height: 6px;
+  background-color: $cMain;
+  left: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  margin-top: 1px;
+}
+
+input[type="radio"]:checked + span.wpcf7-list-item-label::after {
+  display: block;
+}
+  }
+
+
+.wpcf7-list-item-label {
+  font-size: 16px;
+  line-height: 16px;
+
+}
+}
+
+.wpcf7-textarea {
+
+  @include max(sp) {
+  height: 200px;
+  }
+}
 
 
 .button-wrap {

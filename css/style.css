@@ -20,10 +20,17 @@
   font-style: normal;
 }
 
+.noto-sans-jp-regular300 {
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
 * {
   font-family: "Noto Sans JP", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -63,7 +70,8 @@ h1 a {
 }
 @media only screen and (max-width: 899px) {
   .akita_logo {
-    width: clamp(17.5rem, 14.839rem + 12.52vw, 21.875rem);
+    width: clamp(15.625rem, 13.813rem + 8.79vw, 18.75rem);
+    padding-left: 1%;
   }
 }
 
@@ -339,18 +347,20 @@ footer
 }
 .footer-companyBlock .officeName img {
   width: 80%;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .footer-companyBlock .address {
   color: #ffffff;
   margin-bottom: 1rem;
-  line-height: 1.5rem;
+  line-height: 1.3rem;
   font-size: clamp(1rem, 0.917rem + 0.17vw, 1.125rem);
   letter-spacing: 0.1rem;
 }
 .footer-companyBlock .info-item {
   color: #ffffff;
-  line-height: 2rem;
+  font-weight: regular;
+  line-height: 1.3rem;
+  margin-bottom: 1rem;
   padding-left: 2%;
   position: relative;
   font-size: clamp(1rem, 0.917rem + 0.17vw, 1.125rem);
@@ -362,7 +372,7 @@ footer
   border-left: solid 2px #ffffff;
   height: clamp(1rem, 0.917rem + 0.17vw, 1.125rem);
   left: 0;
-  top: 20%;
+  top: 10%;
 }
 
 .footer-menuBlock {
@@ -434,7 +444,7 @@ html {
 }
 
 .contentsWrap {
-  width: clamp(45rem, 80vw, 100rem);
+  width: clamp(45rem, 15rem + 53.33vw, 63rem);
   margin-left: auto;
   margin-right: auto;
 }
@@ -823,6 +833,8 @@ main {
   margin-left: 5%;
   position: relative;
   display: block;
+  font-weight: medium;
+  font-weight: 500;
 }
 .common__block .flexwrap .flexbox__subTitle p.beforeBorder::before {
   border-top: 3px solid #009FE6;
@@ -882,8 +894,24 @@ main {
   margin-bottom: 1rem;
 }
 .common__block-textBlock-li {
-  font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
-  line-height: 1.5rem;
+  font-size: 18px;
+  line-height: 2rem;
+  list-style-type: disc;
+  list-style-position: inside;
+}
+@media only screen and (max-width: 899px) {
+  .common__block-textBlock-li {
+    font-size: 16px;
+  }
+}
+.common__block-textBlock-p {
+  font-size: 18px;
+  margin-top: 2rem;
+}
+@media only screen and (max-width: 899px) {
+  .common__block-textBlock-p {
+    font-size: 16px;
+  }
 }
 
 /* ----------------section RECRUIT----------------- */
@@ -894,7 +922,8 @@ main {
   position: relative;
 }
 .common__recruit::after {
-  background-color: #026D9D;
+  background: rgb(8, 172, 162);
+  background: linear-gradient(180deg, rgb(8, 172, 162) 0%, rgb(2, 109, 157) 100%);
   position: absolute;
   content: "";
   width: 100%;
@@ -909,7 +938,7 @@ main {
 .common__recruit-block-positionBlock {
   position: absolute;
   width: clamp(22.5rem, 18.75rem + 7.5vw, 28.125rem);
-  bottom: clamp(0rem, -15.341rem + 27.27vw, 18.75rem);
+  bottom: 200px;
 }
 @media only screen and (max-width: 899px) {
   .common__recruit-block-positionBlock {
@@ -939,7 +968,7 @@ main {
   }
 }
 .common__recruit-flexBox-imgBlock {
-  width: 90%;
+  width: 80%;
   aspect-ratio: 1/1;
   margin-left: auto;
   padding-left: 2%;
@@ -962,6 +991,12 @@ main {
   .common__recruit-flexBox-imgBlock img {
     padding-left: 0;
   }
+}
+.common__recruit .recruit__btn {
+  width: 30% !important;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ----------------CONTACT----------------- */
@@ -1022,13 +1057,11 @@ main {
   border: 3px solid #ffffff;
   color: #ffffff;
   position: relative;
+  font-weight: bold;
 }
 .contact-webBlock a:hover {
-  background-color: rgb(52, 255, 243);
-  background-color: linear-gradient(280deg, rgb(52, 255, 243) 0%, rgb(0, 159, 230) 100%);
-  text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
-  font-weight: bold;
-  transition: background-color 1s;
+  opacity: 0.5;
+  transition: opacity 1s;
 }
 .contact-webBlock a span {
   padding-bottom: clamp(0.938rem, 0.813rem + 0.25vw, 1.125rem);
@@ -1036,7 +1069,7 @@ main {
 .contact-webBlock a img {
   width: 50px;
   height: 50px;
-  padding-left: 1%;
+  margin-left: 1%;
 }
 .contact-webBlock a span {
   color: #ffffff;
@@ -1052,23 +1085,11 @@ main {
   display: block;
   color: #026D9D;
   padding: 30px 0;
+  font-weight: bold;
 }
 .contact-telBlock a:hover {
-  height: 100%;
-  height: 130px;
-  padding-top: 0;
-  background-color: rgb(52, 255, 243);
-  background-color: linear-gradient(280deg, rgb(52, 255, 243) 0%, rgb(0, 159, 230) 100%);
-  text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
-  font-weight: bold;
-  padding: 30px 0;
-  transition: background-color 1s;
-  color: #ffffff;
-  transition: color 1s;
-}
-.contact-telBlock a:hover span {
-  color: #ffffff;
-  transition: color 1s;
+  opacity: 0.5;
+  transition: opacity 1s;
 }
 .contact-telBlock a span {
   color: #026D9D;
@@ -1135,7 +1156,7 @@ top
   left: 10px;
   bottom: 10px;
   /*テキストの形状*/
-  color: #333333;
+  color: #ffffff;
   font-size: 0.7rem;
   letter-spacing: 0.05em;
   /*縦書き設定*/
@@ -1153,7 +1174,7 @@ top
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #333333;
+  background: #ffffff;
   /*丸の動き1.6秒かけて透過し、永遠にループ*/
   animation: circlemove 1.6s ease-in-out infinite, cirlemovehide 1.6s ease-out infinite;
 }
@@ -1192,7 +1213,7 @@ top
   /*線の形状*/
   width: 2px;
   height: 50px;
-  background: #333333;
+  background: #ffffff;
 }
 
 /* ----------------section NEWS----------------- */
@@ -1353,7 +1374,7 @@ top
   background-size: 100%;
   height: 100%;
   padding-top: 3rem;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
 }
 
 .top__strong-title {
@@ -1391,16 +1412,24 @@ top
   background: #ffffff;
   padding: 2%;
 }
+@media only screen and (min-width: 900px) {
+  .strong .slider .slick-slider-li {
+    width: 33% !important;
+  }
+}
 @media only screen and (max-width: 899px) {
   .strong .slider .slick-slider-li {
     padding: 1%;
   }
 }
-.strong .slider .slick-slider-li img {
+.strong .slider .slick-slider-li .iconWrap {
   width: 50%;
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+.strong .slider .slick-slider-li .iconWrap i {
+  color: #009FE6;
 }
 .strong .carousel-slide-title {
   font-size: clamp(1.25rem, 1.083rem + 0.33vw, 1.5rem);
@@ -1444,7 +1473,8 @@ top
      object-fit: cover;
 }
 .top__business-block-text {
-  font-size: clamp(1.75rem, 1.648rem + 0.18vw, 1.875rem);
+  font-size: 22px;
+  letter-spacing: 0.1rem;
   width: 200px;
   display: block;
   background-color: #ffffff;
@@ -1596,7 +1626,7 @@ COMPANY 会社案内
   font-weight: bold;
   margin-bottom: 2rem;
   position: relative;
-  padding-left: 5%;
+  padding-left: 4%;
 }
 @media only screen and (min-width: 900px) {
   .company__policy-textBlock-subTitle br {
@@ -1611,7 +1641,7 @@ COMPANY 会社案内
 }
 .company__policy-textBlock-subTitle::before {
   content: "";
-  width: 4%;
+  width: 2%;
   border: solid 2px #009FE6;
   position: absolute;
   top: 50%;
@@ -1624,7 +1654,6 @@ COMPANY 会社案内
 }
 .company__policy-textBlock-p {
   line-height: 1.5rem;
-  font-weight: normal;
 }
 @media only screen and (max-width: 899px) {
   .company__policy-textBlock-p {
@@ -2015,7 +2044,10 @@ table td:empty {
   padding-bottom: 3rem;
 }
 .business__blueprint .titleBlock {
-  text-align: center;
+  display: inline-block;
+}
+.business__blueprint .titleBlock .commonTitle-h2-textWhite span {
+  color: #009FE6;
 }
 .business__blueprint-textBlock {
   width: 100%;
@@ -2050,8 +2082,16 @@ table td:empty {
 .business__blueprint-sliderBlock {
   margin-top: 2rem;
 }
+.business__blueprint-sliderBlock .slider .slick-slider-li {
+  width: 30%;
+  aspect-ratio: 1/1;
+  padding: 0 1%;
+}
 .business__blueprint-sliderBlock .slider .slick-slider-li img {
-  width: 95%;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -2328,6 +2368,7 @@ NEWS (details)
 @media only screen and (max-width: 899px) {
   .Form-Item__leftBox {
     width: 100%;
+    padding-left: 0;
   }
 }
 .Form-Item__rightBox {
@@ -2338,6 +2379,8 @@ NEWS (details)
 @media only screen and (max-width: 899px) {
   .Form-Item__rightBox {
     width: 100%;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 .Form-Item-Label {
@@ -2353,6 +2396,7 @@ NEWS (details)
     width: 90%;
     justify-content: center;
     justify-content: flex-start;
+    font-size: 16px;
   }
 }
 .Form-Item-Label-Required, .Form-Item-Label-Arbitrary {
@@ -2388,8 +2432,78 @@ NEWS (details)
 .Form-Item .wpcf7-radio {
   display: flex;
   flex-wrap: wrap;
-  font-size: clamp(0.688rem, 0.646rem + 0.08vw, 0.75rem);
-  line-height: 1.5rem;
+  align-items: center;
+}
+@media only screen and (max-width: 899px) {
+  .Form-Item .wpcf7-radio {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.Form-Item .wpcf7-radio input {
+  margin-top: 0;
+}
+
+.wpcf7-list-item {
+  margin-right: 2rem;
+}
+.wpcf7-list-item input[type=radio] {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+.wpcf7-list-item .wpcf7-list-item.first {
+  margin-left: 0;
+}
+.wpcf7-list-item span.wpcf7-list-item-label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  line-height: 3rem;
+}
+@media only screen and (max-width: 899px) {
+  .wpcf7-list-item span.wpcf7-list-item-label {
+    line-height: 2rem;
+    font-size: 13px;
+  }
+}
+.wpcf7-list-item span.wpcf7-list-item-label::before {
+  display: block;
+  content: "";
+  border-radius: 4px;
+  border: 1px solid #333333;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  margin-top: 2px;
+}
+.wpcf7-list-item span.wpcf7-list-item-label::after {
+  display: block;
+  position: absolute;
+  content: "";
+  border-radius: 1px;
+  width: 6px;
+  height: 6px;
+  background-color: #009FE6;
+  left: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  margin-top: 1px;
+}
+.wpcf7-list-item input[type=radio]:checked + span.wpcf7-list-item-label::after {
+  display: block;
+}
+.wpcf7-list .wpcf7-list-item-label {
+  font-size: 16px;
+  line-height: 16px;
+}
+
+@media only screen and (max-width: 899px) {
+  .wpcf7-textarea {
+    height: 200px;
+  }
 }
 
 .button-wrap .wpcf7-form-control {
@@ -2438,6 +2552,11 @@ NEWS (details)
   width: 94%;
   margin: 0 auto;
 }
+@media only screen and (min-width: 900px) {
+  .slider {
+    width: 100%;
+  }
+}
 
 .slider img {
   width: 100%; /*スライダー内の画像を横幅100%に*/
@@ -2446,7 +2565,7 @@ NEWS (details)
 
 /*slickのJSで書かれるタグ内、スライド左右の余白調整*/
 .slider .slick-slide {
-  margin: 0 10px;
+  margin: 0 1px;
 }
 
 /*矢印の設定*/

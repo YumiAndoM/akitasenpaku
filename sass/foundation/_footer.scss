@@ -54,7 +54,7 @@ footer
   .officeName {
     img {
       width: 80%;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       
     }
   }
@@ -62,7 +62,7 @@ footer
   .address {
     color: $cWhite;
     margin-bottom: 1rem;
-    line-height: 1.5rem;
+    line-height: 1.3rem;
     font-size: clamp(1rem, 0.917rem + 0.17vw, 1.125rem);
     letter-spacing: 0.1rem;
   }
@@ -70,7 +70,9 @@ footer
   .info {
     &-item {
       color: $cWhite;
-      line-height: 2rem;
+      font-weight: regular;
+      line-height: 1.3rem;
+      margin-bottom: 1rem;
       padding-left: 2%;
       position: relative;
       font-size: clamp(1rem, 0.917rem + 0.17vw, 1.125rem);
@@ -82,7 +84,7 @@ footer
         border-left: solid 2px $cWhite;
         height: clamp(1rem, 0.917rem + 0.17vw, 1.125rem);;
         left: 0;
-        top: 20%;
+        top: 10%;
 
         
       }
