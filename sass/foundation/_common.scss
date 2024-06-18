@@ -56,14 +56,14 @@ main {
 .main__bg {
   width: 100%;
   background: url(../img/bg03.png), url(../img/bg04.png);
-  background-position: top 100vh left 0, bottom 50vh right 0%; 
-  background-size: 70%, 100%;
+  background-position: top 120vh left 0, bottom 77vh right 0%; 
+  background-size: 60%, 100%;
   z-index: -3;
   background-repeat: no-repeat;
 
   @include max(sp) {
-    background-position: top 150vh left 0, bottom 100vh right 0; 
-    background-size: 150%, 200%;
+    background-position: top 150vh left 0, bottom 120vh right 0; 
+    background-size: 90%, 100%;
   }
 }
 
@@ -213,6 +213,7 @@ main {
   background: rgb(0,159,230);
   background: linear-gradient(90deg, rgba(0,159,230,1) 0%, rgba(52,255,243,1) 100%);
   margin-top: 3rem;
+  
 
   @include max(sp) {
     width: 290px !important;
@@ -232,10 +233,11 @@ main {
     font-size: clamp(1.125rem, 1.042rem + 0.17vw, 1.25rem);
     letter-spacing: 0.2rem;
     position: relative;
+    
 
     &:hover {
       color: $cMain;
-      transition: color 2s;
+      transition: all ease-out 2s;
     }
 
     &::after {
@@ -269,17 +271,19 @@ main {
   //   text-align: center;
   //   outline: none;
     /*アニメーションの指定*/   
-    transition: ease 1s;
+    transition: ease-in-out 2s;
 }
 
 /*ボタン内spanの形状*/
 .btn span {
 	position: relative;
 	z-index: 3;/*z-indexの数値をあげて文字を背景よりも手前に表示*/
+  
 }
 
-.btn:hover span{
+.btn span:hover{
 	color:$cMain;
+  transition-delay: 5s;
 }
 
 /*== 背景が流れる（斜め） */
@@ -300,6 +304,8 @@ main {
 /*hoverした時のアニメーション*/
 .bgskew:hover::before {
 	animation: skewanime 2s forwards;/*アニメーションの名前と速度を定義*/
+  animation-timing-function: ease-out;
+  // transition-timing-function: ease-out;
 }
 
 @keyframes skewanime {

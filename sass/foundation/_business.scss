@@ -289,6 +289,8 @@ BUSINESS　事業概要
   
   overflow-x: scroll !important;
 
+  
+
   @include max(sp) {
     width: 100%;
     overflow-x: scroll !important;
@@ -366,6 +368,24 @@ table td:empty {
 }
 
 
+
+/* スクロールバーの幅と高さを設定する */
+.scrollbar::-webkit-scrollbar {
+  width: 10px;
+  height: 15px;
+  background-color: $cWhiteOpa;
+}
+/* スクロールバーの形を設定する */
+.scrollbar-thumb-rounded::-webkit-scrollbar-thumb {
+  border-radius: 0.25rem;
+}
+/* スクロールバーの色を設定する */
+.scrollbar-thumb-black::-webkit-scrollbar-thumb {
+  --bg-opacity: 1;
+  background-color: $cMain;
+}
+
+
 /* ----------------BLUEPRINT　（設計図）----------------- */
 .business__blueprint {
   width: 100%;
@@ -424,27 +444,6 @@ table td:empty {
 }
 
 
-// .scroll {
-//   display: flex;
-//   flex-direction: row;
-//   height: 100vh;
-//   width: 100vw;
-//   overflow-x: auto;
-// }
-
-// .scroll > div {
-//   font-size: 14em;
-//   height: 100%;
-//   display: flex;
-//   align-items: center;
-//   line-height: 1;
-//   background: #ccdfff;
-// }
-
-// .scroll > div:nth-child(even) {
-//   background: #f2f4c1;
-// }
-
 /* ----------------BUSINESS BLUEPRINT　（設計図） SLIDER----------------- */
 .business__blueprint {
   &-sliderBlock {
@@ -458,12 +457,18 @@ table td:empty {
     width: 30%;
     aspect-ratio: 1 / 1;
     padding: 0 1%;
+    object-fit: cover;
+
+    @include max(sp) {
+      width: 100%;
+      padding: 0;
+    }
     
 
     img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      // object-fit: cover;
       display: block;
       margin-left: auto;
       margin-right: auto;

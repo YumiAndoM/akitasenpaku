@@ -22,6 +22,10 @@
 
 .slider .slick-slide {
     margin:0 1px;
+
+    @include max(sp) {
+        margin: 0 10px;
+    }
 }
 
 /*矢印の設定*/
