@@ -13,6 +13,7 @@ NEWS-LIST
 
   @include max(sp) {
     flex-direction: column;
+    // margin-bottom: 1rem;
   }
 
   &-imgBox {
@@ -86,12 +87,16 @@ NEWS-LIST
 
     .newsButton {
   // width: clamp(21.875rem, 19.792rem + 4.17vw, 25rem);
-  width: 40% !important;
+  width: 150px !important;
   height: clamp(2.5rem, 2.083rem + 0.83vw, 3.125rem);
   background: rgb(0,159,230);
   background: linear-gradient(90deg, rgba(0,159,230,1) 0%, rgba(52,255,243,1) 100%);
   margin-top: 3rem;
   margin-left: auto;
+
+  @include max(sp) {
+    margin-top: 2rem;
+  }
 
   a {
     width: 100%;

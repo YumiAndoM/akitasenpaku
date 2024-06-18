@@ -312,6 +312,7 @@ footer
 @media only screen and (max-width: 899px) {
   .footer .contentsWrap {
     width: 100%;
+    overflow-x: hidden;
   }
 }
 .footer-arrow {
@@ -1469,6 +1470,11 @@ top
 }
 .strong .slider .slick-slider-li .iconWrap i {
   color: #009FE6;
+  font-size: 7rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 .strong .carousel-slide-title {
   font-size: clamp(1.25rem, 1.083rem + 0.33vw, 1.5rem);
@@ -2229,12 +2235,17 @@ NEWS-LIST
   }
 }
 .news__newsList-block-box-textBox .newsButton {
-  width: 40% !important;
+  width: 150px !important;
   height: clamp(2.5rem, 2.083rem + 0.83vw, 3.125rem);
   background: rgb(0, 159, 230);
   background: linear-gradient(90deg, rgb(0, 159, 230) 0%, rgb(52, 255, 243) 100%);
   margin-top: 3rem;
   margin-left: auto;
+}
+@media only screen and (max-width: 899px) {
+  .news__newsList-block-box-textBox .newsButton {
+    margin-top: 2rem;
+  }
 }
 .news__newsList-block-box-textBox .newsButton a {
   width: 100%;

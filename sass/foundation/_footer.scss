@@ -15,6 +15,7 @@ footer
   .contentsWrap {
     @include max(sp) {
       width: 100%;
+      overflow-x: hidden;
     }
   }
 
