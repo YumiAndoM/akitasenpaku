@@ -241,8 +241,17 @@ h1 a {
   #g-nav li.header-nav__li-sp {
     padding-left: 7%;
   }
+  #g-nav li.news {
+    border-bottom: none !important;
+  }
+  #g-nav li.contact {
+    border-bottom: none !important;
+  }
   #g-nav li.contact a {
     color: #ffffff;
+  }
+  #g-nav li a.btnlinestretches4::after {
+    display: none;
   }
   #g-nav li a {
     color: #ffffff;
@@ -596,7 +605,7 @@ main {
 
 /* ----------------button2----------------- */
 .commonButton2 {
-  width: 380px !important;
+  width: clamp(17.5rem, 7.083rem + 18.52vw, 23.75rem);
   height: clamp(4.375rem, 4.167rem + 0.42vw, 4.688rem);
   background: rgb(0, 159, 230);
   background: linear-gradient(90deg, rgb(0, 159, 230) 0%, rgb(52, 255, 243) 100%);
@@ -638,7 +647,7 @@ main {
 }
 
 .commonButton {
-  width: 380px;
+  width: clamp(17.5rem, 7.083rem + 18.52vw, 23.75rem);
   height: clamp(4.375rem, 4.167rem + 0.42vw, 4.688rem);
   background: rgb(0, 159, 230);
   background: linear-gradient(90deg, rgb(0, 159, 230) 0%, rgb(52, 255, 243) 100%);
@@ -666,7 +675,7 @@ main {
 }
 .commonButton a:hover {
   color: #009FE6;
-  transition: color 1s;
+  transition: color 2s;
 }
 .commonButton a::after {
   content: ">";
@@ -686,7 +695,7 @@ main {
   overflow: hidden;
   /*ボタンの形状*/
   /*アニメーションの指定*/
-  transition: ease 0.2s;
+  transition: ease 1s;
 }
 
 /*ボタン内spanの形状*/
@@ -715,7 +724,7 @@ main {
 
 /*hoverした時のアニメーション*/
 .bgskew:hover::before {
-  animation: skewanime 0.5s forwards; /*アニメーションの名前と速度を定義*/
+  animation: skewanime 2s forwards; /*アニメーションの名前と速度を定義*/
 }
 
 @keyframes skewanime {
@@ -929,23 +938,23 @@ main {
   margin-bottom: 1rem;
 }
 .common__block-textBlock-li {
-  font-size: 18px;
-  line-height: 2rem;
+  font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
+  line-height: clamp(1.5rem, 0.667rem + 1.48vw, 2rem);
   list-style-type: disc;
   list-style-position: inside;
 }
 @media only screen and (max-width: 899px) {
   .common__block-textBlock-li {
-    font-size: 16px;
+    font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
   }
 }
 .common__block-textBlock-p {
-  font-size: 18px;
-  margin-top: 2rem;
+  font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
+  margin-top: clamp(1.5rem, 0.667rem + 1.48vw, 2rem);
 }
 @media only screen and (max-width: 899px) {
   .common__block-textBlock-p {
-    font-size: 16px;
+    font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
   }
 }
 
@@ -973,7 +982,7 @@ main {
 .common__recruit-block-positionBlock {
   position: absolute;
   width: clamp(22.5rem, 18.75rem + 7.5vw, 28.125rem);
-  bottom: 200px;
+  top: clamp(12.5rem, 2.083rem + 18.52vw, 18.75rem);
 }
 @media only screen and (max-width: 899px) {
   .common__recruit-block-positionBlock {
@@ -1012,6 +1021,7 @@ main {
   .common__recruit-flexBox-imgBlock {
     width: 100%;
     margin-bottom: 1rem;
+    padding-left: 0;
   }
 }
 .common__recruit-flexBox-imgBlock img {
@@ -1352,7 +1362,7 @@ top
   height: 100%;
   background: rgba(0, 159, 230, 0.5);
   background: linear-gradient(0deg, rgba(0, 159, 230, 0.5) 0%, rgba(255, 255, 255, 0) 82%);
-  padding-top: 3rem;
+  padding-top: 2rem;
   padding-bottom: 3rem;
 }
 .movie iframe {
@@ -1402,8 +1412,14 @@ top
 /* ----------------section COMPANY----------------- */
 .common__company {
   width: 100%;
+  height: clamp(35rem, 16.25rem + 33.33vw, 46.25rem);
   padding-top: 3rem;
   padding-bottom: 5rem;
+}
+@media only screen and (max-width: 899px) {
+  .common__company {
+    height: 80%;
+  }
 }
 
 /* ----------------section strong----------------- */
@@ -1413,7 +1429,7 @@ top
   z-index: -1;
   background-size: 100%;
   height: 100%;
-  padding-top: 3rem;
+  padding-top: 2rem;
   padding-bottom: 3rem;
 }
 
@@ -1491,13 +1507,20 @@ top
 .business {
   width: 100%;
   height: 100%;
-  padding-top: 3rem;
+  padding-top: 2rem;
 }
 
 .top__business {
   width: 100%;
-  margin-top: 5rem;
   margin-bottom: 3rem;
+}
+.top__business-01 {
+  height: clamp(31.25rem, 15.625rem + 27.78vw, 40.625rem);
+}
+@media only screen and (max-width: 899px) {
+  .top__business-01 {
+    height: 90%;
+  }
 }
 .top__business-block {
   width: 100%;
@@ -1566,7 +1589,7 @@ COMPANY 会社案内
   }
 }
 .company__messageBlock-positionBlock {
-  width: clamp(31.25rem, 27.083rem + 8.33vw, 37.5rem);
+  width: clamp(28.125rem, 22.917rem + 9.26vw, 31.25rem);
   position: absolute;
   bottom: 0;
 }
@@ -1581,8 +1604,8 @@ COMPANY 会社案内
   background-color: #ffffff;
 }
 .company__messageBlock-positionBlock-textBlock-p {
-  font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
-  line-height: 2rem;
+  font-size: clamp(0.875rem, 0.667rem + 0.37vw, 1rem);
+  line-height: clamp(1.5rem, 0.667rem + 1.48vw, 2rem);
   font-family: "Noto Serif JP", serif;
   font-optical-sizing: auto;
   font-weight: 600;
@@ -1711,7 +1734,7 @@ COMPANY 会社案内
 .company__company {
   width: 100%;
   padding-top: 2rem;
-  padding-bottom: 7rem;
+  padding-bottom: 5rem;
 }
 .company__company-imgBlock {
   width: 100%;
@@ -1942,12 +1965,12 @@ BUSINESS　事業概要
 /* ----------------BUSINESS FACILITY　（施設紹介）----------------- */
 .business__facility {
   width: 100%;
-  height: clamp(43.75rem, 41.193rem + 4.55vw, 46.875rem);
+  height: clamp(42.5rem, 40.417rem + 3.7vw, 43.75rem);
   display: block;
   background: rgb(255, 255, 255);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(8, 172, 162, 0.7) 100%);
   padding-top: 2rem;
-  padding-bottom: 5rem;
+  padding-bottom: 3rem;
 }
 @media only screen and (max-width: 899px) {
   .business__facility {
@@ -2025,7 +2048,7 @@ BUSINESS　事業概要
 }
 
 .facility__tableBlock {
-  width: 600px;
+  width: 550px;
   overflow-x: scroll !important;
 }
 @media only screen and (max-width: 899px) {
@@ -2091,12 +2114,17 @@ table td:empty {
 .business__blueprint .titleBlock {
   display: inline-block;
 }
+@media only screen and (max-width: 899px) {
+  .business__blueprint .titleBlock {
+    display: block;
+    text-align: center;
+  }
+}
 .business__blueprint .titleBlock .commonTitle-h2-textWhite span {
   color: #009FE6;
 }
 .business__blueprint-textBlock {
   width: 100%;
-  margin-top: 2rem;
   margin-bottom: 2rem;
 }
 .business__blueprint-textBlock-p {
@@ -2401,7 +2429,6 @@ NEWS (details)
 .Form-Item {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   padding-top: 2%;
   padding-bottom: 2%;
 }
@@ -2626,19 +2653,19 @@ NEWS (details)
   top: 42%;
   cursor: pointer; /*マウスカーソルを指マークに*/
   outline: none; /*クリックをしたら出てくる枠線を消す*/
-  border-top: 2px solid #666; /*矢印の色*/
-  border-right: 2px solid #666; /*矢印の色*/
+  border-top: 2px solid #ffffff; /*矢印の色*/
+  border-right: 2px solid #ffffff; /*矢印の色*/
   height: 15px;
   width: 15px;
 }
 
 .slick-prev { /*戻る矢印の位置と形状*/
-  left: -1.5%;
+  left: -3%;
   transform: rotate(-135deg);
 }
 
 .slick-next { /*次へ矢印の位置と形状*/
-  right: -1.5%;
+  right: -3%;
   transform: rotate(45deg);
 }
 

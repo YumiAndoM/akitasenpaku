@@ -16,11 +16,8 @@ html {
 
 
 .contentsWrap {
-  // @include pcContents;1
-  // width: clamp(45rem, 80vw, 100rem);
-  // width: 1152px;
-  // width: 100%;
-  // max-width: 1008px;
+
+  // ↓PC1440幅の時コンテンツ幅70％の1008、画面幅900に近づくにつれてコンテンツ幅80％に近づけている
   width: clamp(45rem, 15rem + 53.33vw, 63rem);
 
   margin-left: auto;
@@ -157,7 +154,8 @@ main {
 .commonButton2 {
   // width: clamp(21.875rem, 19.792rem + 4.17vw, 25rem);
   // width: 80% !important;
-  width: 380px !important;
+  // width: 380px !important;
+  width: clamp(17.5rem, 7.083rem + 18.52vw, 23.75rem);
   height: clamp(4.375rem, 4.167rem + 0.42vw, 4.688rem);
   background: rgb(0,159,230);
   background: linear-gradient(90deg, rgba(0,159,230,1) 0%, rgba(52,255,243,1) 100%);
@@ -209,7 +207,8 @@ main {
 .commonButton {
   // width: clamp(21.875rem, 19.792rem + 4.17vw, 25rem);
   // width: 40% !important;
-  width: 380px;
+  // width: 380px;
+  width: clamp(17.5rem, 7.083rem + 18.52vw, 23.75rem);
   height: clamp(4.375rem, 4.167rem + 0.42vw, 4.688rem);
   background: rgb(0,159,230);
   background: linear-gradient(90deg, rgba(0,159,230,1) 0%, rgba(52,255,243,1) 100%);
@@ -236,7 +235,7 @@ main {
 
     &:hover {
       color: $cMain;
-      transition: color 1s;
+      transition: color 2s;
     }
 
     &::after {
@@ -270,7 +269,7 @@ main {
   //   text-align: center;
   //   outline: none;
     /*アニメーションの指定*/   
-    transition: ease .2s;
+    transition: ease 1s;
 }
 
 /*ボタン内spanの形状*/
@@ -300,7 +299,7 @@ main {
 
 /*hoverした時のアニメーション*/
 .bgskew:hover::before {
-	animation: skewanime .5s forwards;/*アニメーションの名前と速度を定義*/
+	animation: skewanime 2s forwards;/*アニメーションの名前と速度を定義*/
 }
 
 @keyframes skewanime {
@@ -576,23 +575,24 @@ main {
       margin-bottom: 1rem;
     }
     &-li {
-      // font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
-      font-size: 18px;
-      line-height: 2rem;
+      font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
+      // font-size: 18px;
+      // line-height: 2rem;
+      line-height: clamp(1.5rem, 0.667rem + 1.48vw, 2rem);
       list-style-type: disc;
       list-style-position: inside;
 
       @include max(sp) {
-        font-size: 16px;
+        font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
       }
     }
 
     &-p {
-      font-size: 18px;
-      margin-top: 2rem;
+      font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
+      margin-top: clamp(1.5rem, 0.667rem + 1.48vw, 2rem);
 
       @include max(sp) {
-        font-size: 16px;
+        font-size: clamp(0.875rem, 0.792rem + 0.17vw, 1rem);
       }
     }
   }
@@ -671,7 +671,8 @@ main {
       width: clamp(22.5rem, 18.75rem + 7.5vw, 28.125rem);
       // top: clamp(9.375rem, 7.292rem + 4.17vw, 12.5rem);
       // bottom: clamp(0rem, -15.341rem + 27.27vw, 18.75rem);
-      bottom: 200px;
+      // bottom: 200px;
+      top: clamp(12.5rem, 2.083rem + 18.52vw, 18.75rem);
 
       @include max(sp) {
         position: static;
@@ -719,6 +720,7 @@ main {
       @include max(sp) {
         width: 100%;
         margin-bottom: 1rem;
+        padding-left: 0;
       }
 
       img {

@@ -186,13 +186,14 @@ BUSINESS　事業概要
 .business__facility {
   width: 100%;
   // height: 120%;
-  height: clamp(43.75rem, 41.193rem + 4.55vw, 46.875rem);
+  // height: clamp(43.75rem, 41.193rem + 4.55vw, 46.875rem);
+  height: clamp(42.5rem, 40.417rem + 3.7vw, 43.75rem);
   // padding-bottom: clamp(31.25rem, 27.083rem + 8.33vw, 37.5rem);
   display: block;
   background: rgb(255,255,255);
   background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(8,172,162,0.7) 100%);
   padding-top: 2rem;
-  padding-bottom: 5rem;
+  padding-bottom: 3rem;
 
   @include max(sp) {
     height: 100%;
@@ -281,7 +282,7 @@ BUSINESS　事業概要
 .facility__tableBlock {
   // width: 100%;
   // width: clamp(37.5rem, 27.273rem + 18.18vw, 50rem);
-  width: 600px;
+  width: 550px;
   // position: absolute;
   // z-index: 2;
   // bottom: 0;
@@ -377,6 +378,11 @@ table td:empty {
     // text-align: center;
     display: inline-block;
 
+    @include max(sp) {
+      display: block;
+      text-align: center;
+    }
+
     .commonTitle-h2-textWhite {
       span {
         color: $cMain;
@@ -387,7 +393,7 @@ table td:empty {
 
   &-textBlock {
     width: 100%;
-    margin-top: 2rem;
+    // margin-top: 2rem;
     margin-bottom: 2rem;
 
     &-p {

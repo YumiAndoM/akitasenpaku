@@ -267,9 +267,22 @@ h1 a {
     padding-left: 7%;
   }
 
+  &.news {
+border-bottom: none !important;
+  }
+
   &.contact {
+    border-bottom: none !important;
     a {
       color: $cWhite;
+      
+    }
+  }
+
+
+  a {
+    &.btnlinestretches4::after {
+      display: none;
     }
   }
 }
