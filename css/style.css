@@ -204,7 +204,7 @@ h1 a {
     right: -120%;
     width: 100%;
     height: 100vh; /*ナビの高さ*/
-    background: #D9D9D9;
+    background: #ffffff;
     /*動き*/
     transition: all 0.6s;
   }
@@ -679,6 +679,7 @@ main {
   font-size: clamp(1.125rem, 1.042rem + 0.17vw, 1.25rem);
   letter-spacing: 0.2rem;
   position: relative;
+  transition: all ease-out 2s;
 }
 .commonButton a:hover {
   color: #009FE6;
@@ -724,22 +725,31 @@ main {
   top: 0;
   left: -150%;
   /*色や形状*/
-  background: #ffffff;
+  background-color: #ffffff;
   width: 120%;
   height: 120%;
-  transform: skewX(-25deg);
-  transition-timing-function: ease-out;
+  animation: anim-out 2s ease-out forwards;
 }
 
 /*hoverした時のアニメーション*/
 .bgskew:hover::before {
   animation: skewanime 2s forwards; /*アニメーションの名前と速度を定義*/
   animation-timing-function: ease-out;
+  background-color: #ffffff;
 }
 
 @keyframes skewanime {
   100% {
     left: -10%; /*画面の見えていない左から右へ移動する終了地点*/
+    animation-timing-function: ease-out;
+  }
+}
+@keyframes anim-out {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 /* ----------------２P以降FV----------------- */
@@ -1091,20 +1101,26 @@ main {
   height: 130px;
   text-align: center;
   font-weight: bold;
-  font-size: clamp(1.375rem, 1.292rem + 0.17vw, 1.5rem);
+  font-size: clamp(0.875rem, 0.25rem + 1.11vw, 1.25rem);
 }
 @media only screen and (max-width: 899px) {
   .contactWrap-ul-item {
     width: 100%;
     margin-bottom: 2rem;
+    font-size: clamp(1rem, 0.71rem + 1.41vw, 1.5rem);
   }
 }
 .contactWrap-ul-item span {
-  font-size: clamp(2.5rem, 2.292rem + 0.42vw, 2.813rem);
+  font-size: clamp(2rem, 1.167rem + 1.48vw, 2.5rem);
   font-family: "Noto Serif JP", serif;
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
+}
+@media only screen and (max-width: 899px) {
+  .contactWrap-ul-item span {
+    font-size: clamp(2.5rem, 2.138rem + 1.76vw, 3.125rem);
+  }
 }
 
 .contact-webBlock a {
@@ -1412,6 +1428,10 @@ top
 }
 .top__movie-title span {
   font-size: 2.5rem;
+  font-family: "Noto Serif JP", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
 }
 @media only screen and (max-width: 899px) {
   .top__movie-title span {
@@ -2116,7 +2136,7 @@ table td:empty {
 /* スクロールバーの幅と高さを設定する */
 .scrollbar::-webkit-scrollbar {
   width: 10px;
-  height: 15px;
+  height: 5px;
   background-color: rgba(255, 255, 255, 0.8);
 }
 
@@ -2128,7 +2148,7 @@ table td:empty {
 /* スクロールバーの色を設定する */
 .scrollbar-thumb-black::-webkit-scrollbar-thumb {
   --bg-opacity: 1;
-  background-color: #009FE6;
+  background-color: #bebebe;
 }
 
 /* ----------------BLUEPRINT　（設計図）----------------- */
@@ -2184,9 +2204,8 @@ table td:empty {
   margin-top: 2rem;
 }
 .business__blueprint-sliderBlock .slider .slick-slider-li {
-  width: 30%;
   aspect-ratio: 1/1;
-  padding: 0 1%;
+  padding: 2%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -2419,31 +2438,8 @@ NEWS (details)
 }
 
 /* ----------------NEWS LINK----------------- */
-.news__linkBlock {
-  margin-top: 3rem;
-  padding-bottom: 3rem;
-}
-.news__linkBlock-box-ul {
-  display: flex;
-  justify-content: center;
-}
-@media only screen and (max-width: 899px) {
-  .news__linkBlock-box-ul {
-    justify-content: space-between;
-  }
-}
-.news__linkBlock-box-li {
-  text-align: center;
-  line-height: 2.5rem;
-}
-@media only screen and (max-width: 899px) {
-  .news__linkBlock-box-li {
-    font-size: clamp(0.75rem, 0.674rem + 0.36vw, 0.875rem);
-  }
-}
-.news__linkBlock-box-li a {
-  display: block;
-  width: 100%;
+.news__linkBlock-box {
+  font-size: clamp(0.875rem, 0.803rem + 0.35vw, 1rem);
 }
 
 .bgColor {
@@ -2456,7 +2452,7 @@ NEWS (details)
   .bgColor {
     margin-left: auto;
     margin-right: auto;
-    width: clamp(9.375rem, 7.563rem + 8.79vw, 12.5rem);
+    width: clamp(7.5rem, 4.6rem + 14.06vw, 12.5rem);
   }
 }
 .bgColor a {
@@ -2474,6 +2470,11 @@ NEWS (details)
   letter-spacing: 0.2rem;
   position: relative;
 }
+@media only screen and (max-width: 899px) {
+  .bgColor a {
+    font-size: clamp(1rem, 0.928rem + 0.35vw, 1.125rem);
+  }
+}
 .bgColor a:hover {
   color: #009FE6;
   transition: color 3s;
@@ -2486,6 +2487,7 @@ NEWS (details)
   width: 60%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 3rem;
 }
 @media only screen and (max-width: 899px) {
   .news__linkBlock-flexBox {
@@ -2519,19 +2521,29 @@ NEWS (details)
   background: #ffffff;
   width: 120%;
   height: 120%;
-  transform: skewX(-20deg);
   transition-timing-function: ease-out;
+  animation: anim-out 2s ease-out forwards;
 }
 
 /*hoverした時のアニメーション*/
 .bgskew2:hover::before {
-  animation: skewanime2 2s forwards; /*アニメーションの名前と速度を定義*/
+  animation: skewanime 2s forwards; /*アニメーションの名前と速度を定義*/
   animation-timing-function: ease-out;
+  background-color: #ffffff;
 }
 
-@keyframes skewanime2 {
+@keyframes skewanime {
   100% {
     left: -10%; /*画面の見えていない左から右へ移動する終了地点*/
+    animation-timing-function: ease-out;
+  }
+}
+@keyframes anim-out {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 .contact__contact {
@@ -2611,14 +2623,14 @@ NEWS (details)
 }
 .Form-Item .wpcf7-form-control {
   width: 100%;
-  line-height: 43px;
+  line-height: 50px;
   padding: 0;
 }
 @media only screen and (max-width: 899px) {
   .Form-Item .wpcf7-form-control {
     margin-top: 1rem;
     margin-bottom: 1rem;
-    line-height: 30px;
+    line-height: 40px;
   }
 }
 .Form-Item .wpcf7-radio {
@@ -2821,6 +2833,123 @@ NEWS (details)
 
 .slick-dots .slick-active button {
   background: #009FE6; /*ドットボタンの現在地表示の色*/
+}
+
+.slick-track {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.slick-list:focus {
+  outline: none;
+}
+
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (min-width: 900px) {
+  .slick-track {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.slick-track:before,
+.slick-track:after {
+  display: table;
+}
+@media only screen and (max-width: 899px) {
+  .slick-track:before,
+  .slick-track:after {
+    content: "";
+  }
+}
+
+.slick-track:after {
+  clear: both;
+}
+
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  min-height: 1px;
+}
+
+[dir=rtl] .slick-slide {
+  float: right;
+}
+
+.slick-slide img {
+  display: block;
+}
+
+.slick-slide.slick-loading img {
+  display: none;
+}
+
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+
+.slick-initialized .slick-slide {
+  display: block;
+}
+
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+  display: none;
 }
 
 html, body, div, span, object, iframe,

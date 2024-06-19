@@ -372,7 +372,7 @@ table td:empty {
 /* スクロールバーの幅と高さを設定する */
 .scrollbar::-webkit-scrollbar {
   width: 10px;
-  height: 15px;
+  height: 5px;
   background-color: $cWhiteOpa;
 }
 /* スクロールバーの形を設定する */
@@ -382,7 +382,7 @@ table td:empty {
 /* スクロールバーの色を設定する */
 .scrollbar-thumb-black::-webkit-scrollbar-thumb {
   --bg-opacity: 1;
-  background-color: $cMain;
+  background-color: #bebebe;
 }
 
 
@@ -449,15 +449,19 @@ table td:empty {
   &-sliderBlock {
 
     margin-top: 2rem;
+
+
+
+
     .slider {
     //   display: flex;
     // justify-content: space-between;
 
     .slick-slider-li {
-    width: 30%;
     aspect-ratio: 1 / 1;
-    padding: 0 1%;
+    padding: 2%;
     object-fit: cover;
+
 
     @include max(sp) {
       width: 100%;
@@ -524,3 +528,8 @@ table td:empty {
 
 	// 		}
 }
+
+
+
+
+

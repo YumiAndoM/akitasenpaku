@@ -58,36 +58,39 @@ NEWS (details)
 
 /* ----------------NEWS LINK----------------- */
 
-.news__linkBlock {
-  margin-top: 3rem;
-  padding-bottom: 3rem;
-  &-box {
-    &-ul {
-    display: flex;
-    justify-content: center;
+// .news__linkBlock {
+//   margin-top: 3rem;
+//   padding-bottom: 3rem;
+//   &-box {
+//     // &-ul {
+//     // display: flex;
+//     // justify-content: center;
 
-    @include max(sp) {
-      justify-content: space-between;
-    }
-    }
+//     // @include max(sp) {
+//     //   justify-content: space-between;
+      
+//     // }
+//     // }
 
-    &-li {
-      text-align: center;
-      line-height: 2.5rem;
+//     &-li {
+//       text-align: center;
+//       line-height: 2.5rem;
 
       
 
-      @include max(sp) {
-        font-size: clamp(0.75rem, 0.674rem + 0.36vw, 0.875rem);
-      }
+//       @include max(sp) {
+//         font-size: clamp(0.75rem, 0.674rem + 0.36vw, 0.875rem);
+//       }
 
-      a {
-        display: block;
-        width: 100%;
-      }
-    }
-  }
-}
+//       a {
+//         display: block;
+//         width: 100%;
+
+        
+//       }
+//     }
+//   }
+// }
 
 // .bgColor {
 //   background: rgb(0,159,230);
@@ -144,6 +147,10 @@ NEWS (details)
 //   }
 // }
 
+.news__linkBlock-box {
+  font-size: clamp(0.875rem, 0.803rem + 0.35vw, 1rem);
+}
+
 .bgColor {
   // width: clamp(21.875rem, 19.792rem + 4.17vw, 25rem);
   // width: 80% !important;
@@ -157,7 +164,10 @@ NEWS (details)
   @include max(sp) {
     margin-left: auto;
     margin-right: auto;
-    width: clamp(9.375rem, 7.563rem + 8.79vw, 12.5rem);
+    // width: clamp(9.375rem, 7.563rem + 8.79vw, 12.5rem);
+    width: clamp(7.5rem, 4.6rem + 14.06vw, 12.5rem);
+    
+    
   }
 
 
@@ -176,6 +186,10 @@ NEWS (details)
     letter-spacing: 0.2rem;
     position: relative;
 
+    @include max(sp) {
+      font-size: clamp(1rem, 0.928rem + 0.35vw, 1.125rem);
+    }
+
     &:hover {
       color: $cMain;
       transition: color 3s;
@@ -192,10 +206,12 @@ NEWS (details)
   width: 60%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 3rem;
 
   @include max(sp) {
     // width: clamp(25rem, 14.583rem + 18.52vw, 31.25rem);
     width: 100%;
+    
   }
 }
 
@@ -226,19 +242,29 @@ NEWS (details)
 	background:$cWhite;
 	width:120%;
 	height: 120%;
-	transform: skewX(-20deg);
+	// transform: skewX(-20deg);
   transition-timing-function: ease-out;
+  animation: anim-out 2s ease-out forwards;
 }
 
 /*hoverした時のアニメーション*/
 .bgskew2:hover::before {
-	animation: skewanime2 2s forwards;/*アニメーションの名前と速度を定義*/
+	animation: skewanime 2s forwards;/*アニメーションの名前と速度を定義*/
   animation-timing-function: ease-out;
+  // transform: skewX(25deg);
+  background-color:$cWhite;
+  
   // transition-timing-function: ease-out;
 }
 
-@keyframes skewanime2 {
+@keyframes skewanime {
 	100% {
 		left:-10%;/*画面の見えていない左から右へ移動する終了地点*/
+    animation-timing-function: ease-out;
 	}
+}
+
+@keyframes anim-out {
+  0% {transform: translateX(100%);}
+  100% {transform: translateX(0);}
 }

@@ -90,13 +90,15 @@
 
   .wpcf7-form-control {
     width: 100%;
-    line-height: 43px;
+    // line-height: 43px;
+    line-height: 50px;
     padding: 0;
 
     @include max(sp) {
       margin-top: 1rem;
       margin-bottom: 1rem;
-      line-height: 30px;
+      // line-height: 30px;
+      line-height: 40px;
     }
   }
 
