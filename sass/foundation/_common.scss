@@ -188,7 +188,7 @@ main {
 
     &:hover {
       color: $cMain;
-      transform: color 5s;
+      transition: color 3s;
     }
 
     &::after {

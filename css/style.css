@@ -645,7 +645,7 @@ main {
 }
 .commonButton2 a:hover {
   color: #009FE6;
-  transform: color 5s;
+  transition: color 3s;
 }
 .commonButton2 a::after {
   content: ">";
