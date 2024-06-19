@@ -283,7 +283,7 @@ main {
 
 .btn span:hover{
 	color:$cMain;
-  transition-delay: 5s;
+  transition-delay: 3s;
 }
 
 /*== 背景が流れる（斜め） */
@@ -292,13 +292,13 @@ main {
     /*絶対配置で位置を指定*/
 	position: absolute;
 	top: 0;
-	left: -130%;
+	left: -150%;
     /*色や形状*/
 	background:$cWhite;
 	width:120%;
 	height: 120%;
 	transform: skewX(-25deg);
-  
+  transition-timing-function: ease-out;
 }
 
 /*hoverした時のアニメーション*/

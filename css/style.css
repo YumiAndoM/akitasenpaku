@@ -713,7 +713,7 @@ main {
 
 .btn span:hover {
   color: #009FE6;
-  transition-delay: 5s;
+  transition-delay: 3s;
 }
 
 /*== 背景が流れる（斜め） */
@@ -722,12 +722,13 @@ main {
   /*絶対配置で位置を指定*/
   position: absolute;
   top: 0;
-  left: -130%;
+  left: -150%;
   /*色や形状*/
   background: #ffffff;
   width: 120%;
   height: 120%;
   transform: skewX(-25deg);
+  transition-timing-function: ease-out;
 }
 
 /*hoverした時のアニメーション*/
@@ -2325,6 +2326,7 @@ NEWS-LIST
 }
 .news__newsList-block-box-textBox .newsButton a:hover {
   color: #009FE6;
+  transition: color 2s;
 }
 .news__newsList-block-box-textBox .newsButton a::after {
   content: ">";
@@ -2360,11 +2362,17 @@ NEWS-LIST
   line-height: 40px;
   text-align: center;
 }
+.pageNationBlock-number-li a {
+  display: block;
+  width: 100%;
+}
 .pageNationBlock .pageNation-active {
   background-color: #009FE6 !important;
 }
 .pageNationBlock .pageNation-active a {
   color: #ffffff !important;
+  display: block;
+  width: 100%;
 }
 
 /* ---------------------------------
@@ -2385,6 +2393,7 @@ NEWS (details)
   font-weight: 400;
   font-style: normal;
   margin-bottom: 2rem;
+  line-height: 2rem;
 }
 .news__news-imgBlock {
   width: 100%;
@@ -2437,22 +2446,94 @@ NEWS (details)
   width: 100%;
 }
 
-.toNewsList {
-  width: 20%;
-  margin-left: 2%;
-  margin-right: 2%;
+.bgColor {
+  width: clamp(9.375rem, 7.563rem + 8.79vw, 12.5rem);
+  height: 50px;
   background: rgb(0, 159, 230);
   background: linear-gradient(90deg, rgb(0, 159, 230) 0%, rgb(52, 255, 243) 100%);
 }
 @media only screen and (max-width: 899px) {
-  .toNewsList {
-    width: 30%;
+  .bgColor {
+    margin-left: auto;
+    margin-right: auto;
+    width: clamp(9.375rem, 7.563rem + 8.79vw, 12.5rem);
   }
 }
-.toNewsList a {
+.bgColor a {
+  width: 100%;
+  height: clamp(4.375rem, 4.167rem + 0.42vw, 4.688rem);
+  display: block;
+  text-align: center;
+  line-height: 50px;
   color: #ffffff;
+  font-family: "Noto Serif JP", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: clamp(1.125rem, 1.042rem + 0.17vw, 1.25rem);
+  letter-spacing: 0.2rem;
+  position: relative;
+}
+.bgColor a:hover {
+  color: #009FE6;
+  transition: color 3s;
 }
 
+.news__linkBlock-flexBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (max-width: 899px) {
+  .news__linkBlock-flexBox {
+    width: 100%;
+  }
+}
+
+.news__linkBlock-box {
+  line-height: 2rem;
+}
+
+.toNext {
+  background: rgb(0, 159, 230);
+  background: linear-gradient(90deg, rgb(0, 159, 230) 0%, rgb(52, 255, 243) 100%);
+  width: 30%;
+  text-align: center;
+}
+.toNext a {
+  width: 100%;
+  display: block;
+}
+
+/*== 背景が流れる（斜め） */
+.bgskew2::before {
+  content: "";
+  /*絶対配置で位置を指定*/
+  position: absolute;
+  top: 0;
+  left: -150%;
+  /*色や形状*/
+  background: #ffffff;
+  width: 120%;
+  height: 120%;
+  transform: skewX(-20deg);
+  transition-timing-function: ease-out;
+}
+
+/*hoverした時のアニメーション*/
+.bgskew2:hover::before {
+  animation: skewanime2 2s forwards; /*アニメーションの名前と速度を定義*/
+  animation-timing-function: ease-out;
+}
+
+@keyframes skewanime2 {
+  100% {
+    left: -10%; /*画面の見えていない左から右へ移動する終了地点*/
+  }
+}
 .contact__contact {
   width: 100%;
   padding-top: 2rem;

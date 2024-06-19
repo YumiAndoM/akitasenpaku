@@ -24,6 +24,7 @@ NEWS (details)
     font-weight: 400;
     font-style: normal;
     margin-bottom: 2rem;
+    line-height: 2rem;
 
     @include max(sp) {
 
@@ -74,6 +75,8 @@ NEWS (details)
       text-align: center;
       line-height: 2.5rem;
 
+      
+
       @include max(sp) {
         font-size: clamp(0.75rem, 0.674rem + 0.36vw, 0.875rem);
       }
@@ -86,18 +89,156 @@ NEWS (details)
   }
 }
 
-.toNewsList {
-  width: 20%;
-  margin-left: 2%;
-  margin-right: 2%;
+// .bgColor {
+//   background: rgb(0,159,230);
+//   background: linear-gradient(90deg, rgba(0,159,230,1) 0%, rgba(52,255,243,1) 100%);
+//   width: 100%;
+//   height: 100%;
+//   display: block;
+// }
+
+// .toNewsList {
+//   width: 20%;
+//   margin-left: 2%;
+//   margin-right: 2%;
+  
+// position: relative;
+// overflow: hidden;
+
+//   &::before {
+//     content: '';
+//     /*絶対配置で位置を指定*/
+// 	position: absolute;
+// 	top: 0;
+// 	left: -150%;
+//     /*色や形状*/
+// 	background:$cWhite;
+// 	width:130%;
+// 	height: 130%;
+// 	transform: skewX(-25deg);
+//   transition-timing-function: ease-out;
+//   }
+
+//   &:hover::before {
+//     animation: skewanime 2s forwards;/*アニメーションの名前と速度を定義*/
+//   animation-timing-function: ease-out;
+//   // transition-timing-function: ease-out;
+//   }
+
+//   @keyframes skewanime {
+// 	100% {
+// 		left:-10%;/*画面の見えていない左から右へ移動する終了地点*/
+// 	}
+// }
+
+//   @include max(sp) {
+//     width: 30%;
+//   }
+  
+//   a {
+//     color: $cWhite;
+
+//     &:hover {
+//       color: $cMain;
+//     }
+//   }
+// }
+
+.bgColor {
+  // width: clamp(21.875rem, 19.792rem + 4.17vw, 25rem);
+  // width: 80% !important;
+  // width: 380px !important;
+  width: clamp(9.375rem, 7.563rem + 8.79vw, 12.5rem);
+  height: 50px;
   background: rgb(0,159,230);
   background: linear-gradient(90deg, rgba(0,159,230,1) 0%, rgba(52,255,243,1) 100%);
+  // margin-top: 3rem;
 
   @include max(sp) {
-    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    width: clamp(9.375rem, 7.563rem + 8.79vw, 12.5rem);
   }
-  
+
+
   a {
+    width: 100%;
+    height: clamp(4.375rem, 4.167rem + 0.42vw, 4.688rem);
+    display: block;
+    text-align: center;
+    line-height: 50px;
     color: $cWhite;
+    font-family: "Noto Serif JP", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: clamp(1.125rem, 1.042rem + 0.17vw, 1.25rem);
+    letter-spacing: 0.2rem;
+    position: relative;
+
+    &:hover {
+      color: $cMain;
+      transition: color 3s;
+    }
+
   }
+}
+
+.news__linkBlock-flexBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // width: clamp(25rem, 14.583rem + 18.52vw, 31.25rem);
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include max(sp) {
+    // width: clamp(25rem, 14.583rem + 18.52vw, 31.25rem);
+    width: 100%;
+  }
+}
+
+.news__linkBlock-box {
+  line-height: 2rem;
+}
+.toNext {
+  background: rgb(0,159,230);
+  background: linear-gradient(90deg, rgba(0,159,230,1) 0%, rgba(52,255,243,1) 100%);
+  width: 30%;
+  text-align: center;
+
+  a {
+    width: 100%;
+    display: block;
+  }
+}
+
+
+/*== 背景が流れる（斜め） */
+.bgskew2::before {
+	content: '';
+    /*絶対配置で位置を指定*/
+	position: absolute;
+	top: 0;
+	left: -150%;
+    /*色や形状*/
+	background:$cWhite;
+	width:120%;
+	height: 120%;
+	transform: skewX(-20deg);
+  transition-timing-function: ease-out;
+}
+
+/*hoverした時のアニメーション*/
+.bgskew2:hover::before {
+	animation: skewanime2 2s forwards;/*アニメーションの名前と速度を定義*/
+  animation-timing-function: ease-out;
+  // transition-timing-function: ease-out;
+}
+
+@keyframes skewanime2 {
+	100% {
+		left:-10%;/*画面の見えていない左から右へ移動する終了地点*/
+	}
 }

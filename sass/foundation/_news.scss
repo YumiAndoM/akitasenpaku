@@ -115,6 +115,7 @@ NEWS-LIST
 
     &:hover {
       color: $cMain;
+      transition: color 2s;
     }
 
     &::after {
@@ -159,6 +160,11 @@ NEWS-LIST
       background-color: #999;
       line-height: 40px;
       text-align: center;
+
+      a {
+        display: block;
+        width: 100%;
+      }
     }
 
     
@@ -169,6 +175,8 @@ NEWS-LIST
 
       a {
         color: $cWhite !important;
+        display: block;
+        width: 100%;
       }
       
     }
